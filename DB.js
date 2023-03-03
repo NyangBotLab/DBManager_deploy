@@ -1,4 +1,4 @@
-const DB = require('./modules/Manager').DBManager;
+const DB = require('./modules/DBManager').DBManager;
 const bot = BotManager.getCurrentBot();
 var DBListener = DB.getInstance("YOUR_PACKAGE_NAME", 'YOUR_USER_ID', false /*get RootPermission*/);
 const ALLSEE = "\u200b".repeat(500);
