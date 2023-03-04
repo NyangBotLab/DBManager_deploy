@@ -5,7 +5,11 @@ export declare class ChatManager {
     private userKey;
     private static _instance;
     private constructor();
-    static getInstance(db: android.database.sqlite.SQLiteDatabase, userKey: string): ChatManager;
+    static getInstance(db?: android.database.sqlite.SQLiteDatabase | null, userKey?: string): ChatManager;
+    /**
+     * 대신 getInstance()를 쓰세요
+     * @deprecated
+     */
     static getAlreadyInstance(): ChatManager;
     getChatByLogID(logId: string, addUser?: boolean): Chat | null;
     getUnderChat(logId: string, addUser?: boolean): Chat | null;
