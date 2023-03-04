@@ -153,7 +153,7 @@ DBListener.on("hide", (chat, channel) => {
 ## member_type_change : (chat : Chat, channel : Channel) => void
 방장 부방장이 바뀌면 반응해요 
 
-chat에다가 is메소드로 구분할 수 있어요
+is메소드로 타입을 구분할 수 있어요
 ```javascript
 DBListener.on("member_type_change", (chat, channel) => {
     if(chat.isDemote()){
@@ -177,8 +177,8 @@ DBListener.on("member_type_change", (chat, channel) => {
 > 채자봇은 할 줄 몰라서 보류
 >
 
-#### 1.  저 안드로이드 디버깅을 활성화한다.
-#### 2. 콘솔에 npm run compile (봇 저장소 폴더 이름) (봇 이름)
+#### 1. 먼저 안드로이드 디버깅을 활성화한다.
+#### 2. 콘솔에 npm run compile (봇 저장소 폴더 이름) (봇 이름) 명령어를 사용한다
 ```shell
 #예시
 npm run compile katalkbot DB
