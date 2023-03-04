@@ -20,19 +20,25 @@ DBListener.on("message", (chat, channel) => {
     /**
      * /ㅎㅇ라고 말하면 보낸사람 + 님 안녕하세요
      */
-    if(chat.text === "/ㅎㅇ"){
-        channel.send(chat.user+"님 안녕하세요")
+    if (chat.text === "/ㅎㅇ") {
+        channel.send(chat.user + "님 안녕하세요")
     }
 
     /**
      * 답장의 원본 원본 꼬리물기로 얻기
      */
-    if(chat.isReply() && chat.text ==="/원본답장"){
+    if (chat.isReply() && chat.text === "/원본답장") {
         let tempChat = chat.source;
-        while(tempChat.isReply()){
+        while (tempChat.isReply()) {
             tempChat = tempChat.source;
         }
-        channel.send( tempChat.user.name+"님이 보낸 원본입니다 "+ chat.text)
+        channel.send(tempChat.user.name + "님이 보낸 원본입니다 " + chat.text)
+    }
+    else if(chat.isVideo()){
+
+    }
+    else if(chat.isAudio()){
+        
     }
 });
 
@@ -40,13 +46,13 @@ DBListener.on("message", (chat, channel) => {
  * 오픈채팅에 들어왔을 때 반응
  */
 DBListener.on("join", (chat, channel) => {
-    channel.send(chat.joinUsers[0].nickName+"님 안녕하세요")
+    channel.send(chat.joinUsers[0].nickName + "님 안녕하세요")
 });
 /**
  * 단체톡방에 초대했을 때 반응
  */
 DBListener.on("invite", (chat, channel) => {
-    channel.send(chat.inviteUser.nickName+"님이"+ chat.invitedUsers.map((e)=>e.nickName).join(",")+"님을 초대했습니다")
+    channel.send(chat.inviteUser.nickName + "님이" + chat.invitedUsers.map((e) => e.nickName).join(",") + "님을 초대했습니다")
 });
 
 /**
@@ -67,27 +73,25 @@ DBListener.on("kick", (chat, channel) => {
  * 누군가 메시지를 지웠을 때
  */
 DBListener.on("delete", (chat, channel) => {
-    channel.send(chat.deletedChat.text+ "메시지가 지워졌어요");
+    channel.send(chat.deletedChat.text + "메시지가 지워졌어요");
 });
 /**
  * 방장이나 부방장이 메시지를 가렸을 때
  */
 DBListener.on("hide", (chat, channel) => {
-    channel.send(chat.user.name+"님이 "+"메시지를 가렸어요");
+    channel.send(chat.user.name + "님이 " + "메시지를 가렸어요");
 });
 
 /**
  * 권한이 바뀔 때
  */
-DBListener.on("member_type_change", (chat,channel)=>{
-    if(chat.isDemote()){
-        channel.send(chat.demoteUser.nickName+"님이 부방장에서 내려왔어요")
-    }
-    else if(chat.isPromote()){
-        channel.send(chat.promoteUser.nickName+"님이 부방장이 되었어요")
-    }
-    else if(chat.isHandover()){
-        channel.send(chat.newHost.nickName+"님이 새 방장이 되었어요");
+DBListener.on("member_type_change", (chat, channel) => {
+    if (chat.isDemote()) {
+        channel.send(chat.demoteUser.nickName + "님이 부방장에서 내려왔어요")
+    } else if (chat.isPromote()) {
+        channel.send(chat.promoteUser.nickName + "님이 부방장이 되었어요")
+    } else if (chat.isHandover()) {
+        channel.send(chat.newHost.nickName + "님이 새 방장이 되었어요");
     }
 });
 DBListener.start();
