@@ -1,12 +1,13 @@
 {
   "name": "db_manager_deploy",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "DB.js",
   "scripts": {
     "build-legacy": "node ./build.js legacy",
     "build-api2": "node ./build.js api2",
-    "build-custom": "node ./build.js custom"
+    "build-custom": "node ./build.js custom",
+    "compile": "node ./compile.js"
   },
   "devDependencies": {
     "typed-emitter": "^2.1.0",

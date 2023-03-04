@@ -1,6 +1,8 @@
 카카오톡 디비 봇 모듈
 ======================
 
+#### 컴터에서 작업하는걸 추천합니다.
+
 > 놀랄 만큼 쉽고 믿기 힘들 만큼 간단합니다
 > 
 > 사용법은 DB.js에 보시면 잘 설명되어 있어요
@@ -10,25 +12,74 @@
 
 # 초기설정 
 
-#### 1. 먼저 콘솔에 npm install을 친다.(타입 자동완성 때문에)
+#### 콘솔에 npm install을 친다.(타입 자동완성 때문에)
 ```shell
 npm install
 ```
-#### 2. adb 유무에 따라 달라진다
 
-```javascript
-//adb 없을시
-const DB = require('Manager').DBManager;
-var DBListener = DB.getInstance("YOUR_PACKAGE_NAME", 'YOUR_USER_ID', false /*루트여부*/);
+#### 소스가 다 완성이 되면 build 명령어를 사용한다
+```shell
+#api2로 빌드
+npm run build-api2
+
+#api2레거시로 빌드
+npm run build-legacy
+
+#custom으로 빌드(리스너 직접 달아야 합니다)
+npm run build-custom
 ```
 
 
+
+### 리스너는 아래와 같이 달면 됩니다
+****
+### API 2
 ```javascript
-//adb 있으면
-// 여기있는 DB.js 쓰시면 됩니다
-const DB = require('./modules/Manager').DBManager;
-var DBListener = DB.getInstance("YOUR_PACKAGE_NAME", 'YOUR_USER_ID', false /*루트여부*/);
+/**
+* 알림바 함수
+*/
+function onNotification(sbn, rm) {
+    DBListener.addChannel(sbn);
+}
+
+/**
+ * 알림바 왔을 떄 채널리스트 추가하기
+ */
+bot.addListener(Event.NOTIFICATION_POSTED, onNotification);
+
+/**
+ * 컴파일 시 자동 종료
+ */
+bot.addListener(Event.START_COMPILE, () => {
+    DBListener.stop();
+});
+
 ```
+
+### API 레거시
+
+```javascript
+/**
+ * 알림바 왔을 떄 채널리스트 추가하기
+ */
+function onNotificationPosted(sbn) {
+    DBListener.addChannel(sbn);
+}
+
+/**
+ * 컴파일시 자동 종료
+ */
+function onStartCompile() {
+    DBListener.stop();
+}
+```
+
+
+마지막으로 dist/DB.js를 쓰시면 됩니다
+
+또한 모듈은 modules/DBManager를 통채로
+메신저봇 모듈 파일로 옮기면 됩니다.
+
 
 ****
 # 리스너들
@@ -119,79 +170,20 @@ DBListener.on("member_type_change", (chat, channel) => {
 
 ****
 
+# 고오오오급 
 ## ADB로 컴파일 하기
 > 메신저봇 전용이에요
 > 
 > 채자봇은 할 줄 몰라서 보류
 >
 
-### 1. 폰이랑 컴터랑 연결 한 뒤 디버깅 모드를 킨다.
-### 2. DB.js를 작성한다.
-### 3. build.js에서 봇 폴더를 설정한다
-```javascript
-const BOTPATH = "봇 저장소" //여기에 봇 저장소 주소
-const fs = require('fs');
-const {execSync} = require("child_process");
-```
-### 4. 작성하고 나서 쓰는 api 버전에 따라 달라집니다
-
-
+#### 1.  저 안드로이드 디버깅을 활성화한다.
+#### 2. 콘솔에 npm run compile (봇 저장소 폴더 이름) (봇 이름)
 ```shell
-#레거시 전용 
-npm run build-legacy 
-
-#api2 전용 
-npm run build-api2 
-
-#custom (리스너가 하나도 제공 안함) 
-npm run build-custom
+#예시
+npm run compile katalkbot DB
+# 봇저장소가 katalkbot 봇이름은 DB
 ```
-
-## 주의 custom을 쓰면 알아서 채널 세션을 추가해야 합니다.
-
-아래는 그 예시
-
-### API 2
-```javascript
-/**
-* 알림바 함수
-*/
-function onNotification(sbn, rm) {
-    DBListener.addChannel(sbn);
-}
-
-/**
- * 알림바 왔을 떄 채널리스트 추가하기
- */
-bot.addListener(Event.NOTIFICATION_POSTED, onNotification);
-
-/**
- * 컴파일 시 자동 종료
- */
-bot.addListener(Event.START_COMPILE, () => {
-    DBListener.stop();
-});
-
-```
-
-### API 레거시
-
-```javascript
-/**
- * 알림바 왔을 떄 채널리스트 추가하기
- */
-function onNotificationPosted(sbn) {
-    DBListener.addChannel(sbn);
-}
-
-/**
- * 컴파일시 자동 종료
- */
-function onStartCompile() {
-    DBListener.stop();
-}
-```
-
 
 # 제작자 및 도움 주신 분
 ### https://github.com/saroro1 (사로로 본인)
