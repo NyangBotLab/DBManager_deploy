@@ -10,6 +10,9 @@
 
 <img src="https://licensebuttons.net/l/by-nc/2.0/kr/88x31.png">
 
+### __이 모듈로 만든거 팔지 말아주세요__
+### __이 소스 자체도 팔지 말아주세요__
+
 # 초기설정 
 
 #### 콘솔에 npm install을 친다.(타입 자동완성 때문에)
