@@ -137,7 +137,7 @@ DBListener.on("kick", (chat, channel) => {
 ## delete : (chat : DeletedFeed, channel : Channel) => void
 누군가 메시지를 지우면 반응합니다
 ```javascript
-DBListener.on("kick", (chat, channel) => {
+DBListener.on("delete", (chat, channel) => {
     channel.send(chat.deletedChat.text+ "메시지가 지워졌어요");
 })
 ```
