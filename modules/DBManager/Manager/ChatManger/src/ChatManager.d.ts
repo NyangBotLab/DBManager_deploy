@@ -13,6 +13,7 @@ export declare class ChatManager {
     static getAlreadyInstance(): ChatManager;
     getChatByLogID(logId: string, addUser?: boolean): Chat | null;
     getUnderChat(logId: string, addUser?: boolean): Chat | null;
+    private _runQuery;
     getChatStack(from?: string | undefined, to?: string | undefined): Chat[];
     getLastChat(addUser?: boolean): Chat | null;
     getOneUserByID(id: string): User | null;

@@ -80,15 +80,6 @@ export interface OldEmoticonAttach {
     thumbnailWidth: number;
     url: string;
 }
-export interface AudioAttach {
-    cs: string;
-    s: number;
-    size: number;
-    expire: number;
-    name: string;
-    k: string;
-    url: string;
-}
 export interface VideoAttach {
     url: string;
     tk: string;
@@ -104,5 +95,12 @@ export interface VideoAttach {
     dh: number;
     wh: number;
     hh: number;
+}
+export interface AudioAttach {
+    "url": string;
+    "d": number;
+    "s": number;
+    "k": string;
+    "expire": number;
 }
 export {};

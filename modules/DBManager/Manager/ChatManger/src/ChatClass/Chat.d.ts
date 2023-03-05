@@ -1,5 +1,5 @@
 import type { ChatType } from "../../../../types";
-import type { VideoChat, AudioChat, EmoticonChat, FeedChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat } from "./index";
+import type { VideoChat, FileChat, EmoticonChat, FeedChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, AudioChat } from "./index";
 import type { User } from "../../../UserManger";
 export declare class Chat {
     protected _user: User;
@@ -33,10 +33,6 @@ export declare class Chat {
         chat: ChatType;
         user: User;
     };
-    /**
-     * 삭제된 시각을 가져옵니다
-     */
-    get deleteTime(): Date | null;
     /**
      * 보낸 시각을 가져옵니다
      */
@@ -80,9 +76,13 @@ export declare class Chat {
     /**
      * 오디오 여부
      */
-    isAudio(): this is AudioChat;
+    isFile(): this is FileChat;
     /**
      * 비디오 여부
      */
     isVideo(): this is VideoChat;
+    /**
+     * 오디오 여부
+     */
+    isAudio(): this is AudioChat;
 }

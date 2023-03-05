@@ -6,5 +6,6 @@ export * from "./NormalChat";
 export * from "./OldEmoticonChat";
 export * from "./PhotoChat";
 export * from "./ReplyChat";
-export * from "./AudioChat";
+export * from "./FileChat";
 export * from "./VideoChat";
+export * from "./AudioChat";
