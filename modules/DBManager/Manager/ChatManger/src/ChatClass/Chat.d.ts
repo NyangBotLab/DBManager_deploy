@@ -1,5 +1,5 @@
 import type { ChatType } from "../../../../types";
-import type { VideoChat, FileChat, EmoticonChat, FeedChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, AudioChat } from "./index";
+import type { VideoChat, FileChat, EmoticonChat, FeedChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, AudioChat, MapChat } from "./index";
 import type { User } from "../../../UserManger";
 export declare class Chat {
     protected _user: User;
@@ -85,4 +85,8 @@ export declare class Chat {
      * 오디오 여부
      */
     isAudio(): this is AudioChat;
+    /**
+     * 맵 여부
+     */
+    isMap(): this is MapChat;
 }

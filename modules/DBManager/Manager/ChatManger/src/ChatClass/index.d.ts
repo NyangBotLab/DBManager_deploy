@@ -9,3 +9,4 @@ export * from "./ReplyChat";
 export * from "./FileChat";
 export * from "./VideoChat";
 export * from "./AudioChat";
+export * from "./MapChat";

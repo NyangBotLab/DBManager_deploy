@@ -1,4 +1,4 @@
-import type { AudioAttach, FileAttach, MentionListAttach, MobileEmoticonAttach, MultiPhotoAttach, OldEmoticonAttach, PCEmoticonAttach, PhotoAttach, ReplyAttach, VideoAttach } from "../attachment";
+import type { AudioAttach, BigEmoticonAttach, FileAttach, MapAttach, MentionListAttach, MobileEmoticonAttach, MultiPhotoAttach, OldEmoticonAttach, PCEmoticonAttach, PhotoAttach, ReplyAttach, VideoAttach } from "../attachment";
 import type { FeedAttach } from "../message";
 export type NUMSTRING = string;
 export interface VFields {
@@ -37,7 +37,7 @@ export interface MultiPhotoChatType extends ChatExtends {
     attachment: MultiPhotoAttach;
 }
 export interface EmoticonChatType extends ChatExtends {
-    attachment: MobileEmoticonAttach & PCEmoticonAttach & MentionListAttach;
+    attachment: (BigEmoticonAttach | MobileEmoticonAttach | PCEmoticonAttach) & MentionListAttach;
 }
 export interface OldEmoticonChatType extends ChatExtends {
     attachment: OldEmoticonAttach;
@@ -53,5 +53,8 @@ export interface VideoChatType extends ChatExtends {
 }
 export interface AudioChatType extends ChatExtends {
     attachment: AudioAttach;
+}
+export interface MapChatType extends ChatExtends {
+    attachment: MapAttach;
 }
 export {};

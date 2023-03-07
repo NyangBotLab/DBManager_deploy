@@ -56,20 +56,27 @@ export interface MultiPhotoAttach {
     thumbnailWidths: number[];
     wl: number[];
 }
-interface EmoticonAttach {
+export interface EmoticonAttach {
     alt: string;
     name: string;
     path: string;
     type: string;
 }
-export interface MobileEmoticonAttach extends EmoticonAttach {
-    s: string;
+export interface BigEmoticonAttach extends EmoticonAttach {
+    sound: string;
+    width: number;
+    height: number;
+    xconVersion: string;
+    msg: string;
 }
 export interface PCEmoticonAttach extends EmoticonAttach {
     height: number;
     sound: string;
     width: number;
     msg: string;
+}
+export interface MobileEmoticonAttach extends EmoticonAttach {
+    s: string;
 }
 export interface OldEmoticonAttach {
     mentions: MentionsAttach[];
@@ -103,4 +110,10 @@ export interface AudioAttach {
     "k": string;
     "expire": number;
 }
-export {};
+export interface MapAttach {
+    lat: number;
+    lng: number;
+    a: string;
+    t: string;
+    c: boolean;
+}
