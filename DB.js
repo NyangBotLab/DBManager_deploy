@@ -35,10 +35,13 @@ DBListener.on("message", (chat, channel) => {
         channel.send(tempChat.user.name + "님이 보낸 원본입니다 " + chat.text)
     }
     else if(chat.isVideo()){
-
+        channel.send("동영상을 보냈습니다 용량 "+chat.video.s)
     }
     else if(chat.isAudio()){
-        
+        channel.send("음성파일을 보냈습니다 용량 "+chat.audio.s)
+    }
+    else if(chat.isMap()){
+        channel.send("지도를 보냈습니다"+chat.map.lng)
     }
 });
 
