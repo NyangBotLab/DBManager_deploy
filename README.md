@@ -153,7 +153,7 @@ DBListener.on("hide", (chat, channel) => {
 })
 ```
 ****
-## member_type_change : (chat : Chat, channel : Channel) => void
+## member_type_change : (chat : MemberTypeChangedFeed, channel : Channel) => void
 방장 부방장이 바뀌면 반응해요 
 
 is메소드로 타입을 구분할 수 있어요
