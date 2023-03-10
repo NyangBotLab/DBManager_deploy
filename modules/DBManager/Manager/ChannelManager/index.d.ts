@@ -1,2 +1,2 @@
-export * from "./ChannelComponent";
+export * from "./Channel";
 export * from "./ChannelManger";

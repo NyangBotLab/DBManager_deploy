@@ -1,5 +1,6 @@
 import { Chat } from "./ChatClass";
 import { User } from "../../UserManger";
+import { Room } from "../../RoomManger";
 export declare class ChatManager {
     private db;
     private userKey;
@@ -18,4 +19,6 @@ export declare class ChatManager {
     getLastChat(addUser?: boolean): Chat | null;
     getOneUserByID(id: string): User | null;
     getMultipleUsersByIDs(ids: string[], makeGroup?: boolean): User[] | Record<keyof User, User>;
+    getOneRoomByID(id: string): Room | null;
+    getMembersByRoomID(id: string): User[] | null;
 }

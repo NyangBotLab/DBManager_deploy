@@ -1,17 +1,18 @@
-import type { Room, OpenRoom } from "../RoomManger";
-export declare class ChannelComponent {
+export declare class Channel {
     protected _id: string;
     protected _name: string;
-    private _replyAction;
-    private _readAction;
-    protected _roomInfo: Room | OpenRoom | null;
+    protected _replyAction: any;
+    protected _readAction: any;
     constructor(id: string, name: string, replayAct: any, readAct: any);
     /**
      * 방 고유 아이디
      */
     get id(): string;
-    isOpenRoom(): boolean;
-    get roomInfo(): import("../../types").RoomCommon | null;
+    get raw(): {
+        id: string;
+        name: string;
+    };
+    get members(): import("..").User[] | null;
     /**
      * 방 이름
      */
@@ -30,8 +31,7 @@ export declare class ChannelComponent {
     toJSON(): {
         name: string;
         id: string;
-        room_info: Room | OpenRoom | null;
     };
-    private _isAPI2;
-    private _getContext;
+    protected _isAPI2(): boolean;
+    protected _getContext(): android.content.Context;
 }

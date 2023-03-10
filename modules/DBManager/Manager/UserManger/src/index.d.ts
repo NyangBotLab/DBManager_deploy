@@ -1,2 +1,1 @@
-export * from "./UserManger";
-export * from "./UserClass";
+export * from "./User";

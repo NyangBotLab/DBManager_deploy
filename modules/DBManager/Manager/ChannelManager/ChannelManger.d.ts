@@ -1,8 +1,8 @@
 import HashMap = java.util.HashMap;
-import { ChannelComponent } from "./ChannelComponent";
+import { Channel } from "./Channel";
 export declare namespace ChannelManager {
     function addChannel(sbn: any): void;
-    function getChannelList(): HashMap<string, ChannelComponent>;
+    function getChannelList(): HashMap<string, Channel>;
     function hasChannelByID(id: string): boolean;
-    function getChannelByID(id: string): ChannelComponent | null;
+    function getChannelByID(id: string): Channel | null;
 }

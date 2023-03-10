@@ -1,7 +1,7 @@
 import type TypedEventEmitter from 'typed-emitter';
 import { ChatManager, MemberTypeChangedFeed } from "../../ChatManger";
 import type { Chat, InviteFeed, LeaveFeed, OpenChatJoinedFeed, OpenChatKickedFeed, DeleteFeed } from "../../ChatManger";
-import { ChannelComponent, ChannelManager } from "../../ChannelManager";
+import { Channel, ChannelManager } from "../../ChannelManager";
 declare const DBManager_base: new () => TypedEventEmitter<MessageEvents>;
 export declare class DBManager extends DBManager_base {
     private static _instance;
@@ -23,13 +23,13 @@ export declare class DBManager extends DBManager_base {
     close(): void;
 }
 type MessageEvents = {
-    "message": (chat: Chat, channel: ChannelComponent | null) => void;
-    "delete": (chat: DeleteFeed, channel: ChannelComponent | null) => void;
-    "hide": (chat: Chat, channel: ChannelComponent | null) => void;
-    "leave": (chat: LeaveFeed, channel: ChannelComponent | null) => void;
-    "join": (chat: OpenChatJoinedFeed, channel: ChannelComponent | null) => void;
-    "invite": (chat: InviteFeed, channel: ChannelComponent | null) => void;
-    "kick": (chat: OpenChatKickedFeed | LeaveFeed, channel: ChannelComponent | null) => void;
-    "member_type_change": (chat: MemberTypeChangedFeed, channel: ChannelComponent | null) => void;
+    "message": (chat: Chat, channel: Channel | null) => void;
+    "delete": (chat: DeleteFeed, channel: Channel | null) => void;
+    "hide": (chat: Chat, channel: Channel | null) => void;
+    "leave": (chat: LeaveFeed, channel: Channel | null) => void;
+    "join": (chat: OpenChatJoinedFeed, channel: Channel | null) => void;
+    "invite": (chat: InviteFeed, channel: Channel | null) => void;
+    "kick": (chat: OpenChatKickedFeed | LeaveFeed, channel: Channel | null) => void;
+    "member_type_change": (chat: MemberTypeChangedFeed, channel: Channel | null) => void;
 };
 export {};
