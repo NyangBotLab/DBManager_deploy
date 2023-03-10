@@ -55,7 +55,10 @@ export declare class LeaveFeed extends FeedChat {
      * 강퇴당한 여부(팀채팅)
      */
     isKicked(): boolean | undefined;
-    isOpenChat(): this is OpenChatKickedFeed;
+    /**
+     * 오픈챗 여부
+     */
+    isOpenChat(): boolean;
 }
 export declare class OpenChatKickedFeed extends FeedChat {
     constructor(props: ChatType);
