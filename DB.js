@@ -21,7 +21,7 @@ DBListener.on("message", (chat, channel) => {
      * /ㅎㅇ라고 말하면 보낸사람 + 님 안녕하세요
      */
     if (chat.text === "/ㅎㅇ") {
-        channel.send(chat.user + "님 안녕하세요")
+        channel.send(chat.user.name + "님 안녕하세요")
     }
 
     /**
