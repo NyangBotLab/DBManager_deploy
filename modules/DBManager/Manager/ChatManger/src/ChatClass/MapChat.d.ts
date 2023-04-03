@@ -1,5 +1,5 @@
 import { Chat } from "./Chat";
-import { MapAttach, MapChatType } from "../../../../types";
+import type { MapAttach, MapChatType } from "../../../../types";
 export declare class MapChat extends Chat {
     constructor(obj: MapChatType);
     /**

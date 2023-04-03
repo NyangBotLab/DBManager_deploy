@@ -1,5 +1,5 @@
 import type { ChatType } from "../../../../types";
-import type { VideoChat, FileChat, EmoticonChat, FeedChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, AudioChat, MapChat } from "./index";
+import type { AudioChat, EmoticonChat, FeedChat, FileChat, MapChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, VideoChat } from "./index";
 import type { User } from "../../../UserManger";
 export declare class Chat {
     protected _user: User;
@@ -40,7 +40,7 @@ export declare class Chat {
     /**
      * Attachment를 가져옵니다
      */
-    get attachment(): object | "" | null;
+    get attachment(): any;
     /**
      * 이모티콘 여부
      */
@@ -89,4 +89,12 @@ export declare class Chat {
      * 맵 여부
      */
     isMap(): this is MapChat;
+    /**
+     * 이전 챗 내용
+     */
+    getPrevChat(count?: number): Chat | null;
+    /**
+     * 다음 챗 내용
+     */
+    getNextChat(count?: number): Chat | null;
 }

@@ -34,6 +34,19 @@ DBListener.on("message", (chat, channel) => {
         }
         channel.send(tempChat.user.name + "님이 보낸 원본입니다 " + chat.text)
     }
+    /**
+     * 이전챗 구하기
+     */
+    if(chat.isReply() && chat.text ==="/이전챗"){
+        channel.send(  chat.source.getPrevChat().text);
+    }
+
+    /**
+     * 다음 챗 구하기
+     */
+    else if(chat.isReply() && chat.text ==="/다음챗"){
+        channel.send(  chat.source.getNextChat().text);
+    }
     else if(chat.isVideo()){
         channel.send("동영상을 보냈습니다 용량 "+chat.video.s)
     }

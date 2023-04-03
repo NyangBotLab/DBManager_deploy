@@ -1,5 +1,5 @@
 import { Chat } from "./Chat";
-import { AudioAttach, AudioChatType } from "../../../../types";
+import type { AudioAttach, AudioChatType } from "../../../../types";
 export declare class AudioChat extends Chat {
     constructor(obj: AudioChatType);
     isAudio(): this is AudioChat;

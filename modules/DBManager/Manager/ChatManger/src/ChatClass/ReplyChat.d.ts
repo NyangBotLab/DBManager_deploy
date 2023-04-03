@@ -1,6 +1,6 @@
 import { Chat } from "./Chat";
 import type { ReplyChatType } from "../../../../types";
-import { User } from "../../../UserManger";
+import type { User } from "../../../UserManger";
 export declare class ReplyChat extends Chat {
     private readonly _source;
     private readonly _mentions;

@@ -1,18 +1,6 @@
-import { OpenUserInfoType, UserCommonInterface } from "../../../types";
+import type { OpenUserInfoType, UserCommonInterface } from "../../../types";
 export declare class User {
-    /**
-     * 유저 고유 번호
-     */
-    protected _id: string;
-    /**
-     * 유저 이름
-     */
-    protected _name: string;
-    /**
-     * 유저 맴버 타입(오픈챗)
-     */
-    protected _member_type: number;
-    protected _data: UserCommonInterface | null;
+    protected _data: UserCommonInterface;
     constructor(obj: UserCommonInterface);
     /**
      * 유저 고유 번호
@@ -37,12 +25,17 @@ export declare class User {
     /**
      * 현재 프로필 이미지를 가져옵니다 총 3종류
      */
-    get profileImage(): Profile;
-    toJSON(): UserCommonInterface | null;
+    get profileImage(): {
+        profile_url: string;
+        full_profile_url: string;
+        origin_profile_url: string;
+    };
+    toJSON(): UserCommonInterface;
 }
 export declare class OpenUser extends User {
     constructor(obj: OpenUserInfoType);
     get raw(): OpenUserInfoType;
+    get memberType(): number;
     /**
      * 방장인지 확인합니다
      */
@@ -51,10 +44,5 @@ export declare class OpenUser extends User {
      * 관리자(부방, 방장)인지 확인합니다
      */
     isManager(): boolean;
+    isOpenUser(): this is OpenUser;
 }
-interface Profile {
-    "profile_url"?: string | undefined;
-    "full_profile_url"?: string;
-    "origin_profile_url"?: string;
-}
-export {};

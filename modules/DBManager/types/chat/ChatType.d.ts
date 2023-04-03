@@ -11,19 +11,15 @@ export interface VFields {
     enc: number;
 }
 export interface ChatType {
-    _id: NUMSTRING;
     id: NUMSTRING;
+    _id: NUMSTRING;
     type: number;
     chat_id: string;
     user_id: string;
     message: string | FeedAttach;
-    attachment: null | "" | object;
+    attachment: any;
     created_at: string;
-    deleted_at: string;
-    client_message_id: string;
     prev_id: string;
-    referer: number;
-    supplement?: object | null;
     v: VFields | null;
 }
 type ChatExtends = Omit<ChatType, "attachment">;

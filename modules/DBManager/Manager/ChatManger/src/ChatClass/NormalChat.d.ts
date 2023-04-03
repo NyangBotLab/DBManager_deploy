@@ -1,6 +1,6 @@
 import { Chat } from "./Chat";
 import type { NormalChatType } from "../../../../types";
-import { User } from "../../../UserManger";
+import type { User } from "../../../UserManger";
 export declare class NormalChat extends Chat {
     private readonly _mentions;
     constructor(obj: NormalChatType);

@@ -4,6 +4,7 @@ import { Room } from "../../RoomManger";
 export declare class ChatManager {
     private db;
     private userKey;
+    private readonly _thread;
     private static _instance;
     private constructor();
     static getInstance(db?: android.database.sqlite.SQLiteDatabase | null, userKey?: string): ChatManager;
@@ -13,12 +14,15 @@ export declare class ChatManager {
      */
     static getAlreadyInstance(): ChatManager;
     getChatByLogID(logId: string, addUser?: boolean): Chat | null;
-    getUnderChat(logId: string, addUser?: boolean): Chat | null;
-    private _runQuery;
-    getChatStack(from?: string | undefined, to?: string | undefined): Chat[];
+    private getPrevChatID;
+    private getNextChatID;
+    getPrevChatByID(logId: string, count?: number): Chat | null;
+    getNextChatByID(logId: string, count?: number): Chat | null;
+    getChatStack(from?: string | undefined, to?: string | undefined, addUser?: boolean): Chat[];
     getLastChat(addUser?: boolean): Chat | null;
     getOneUserByID(id: string): User | null;
-    getMultipleUsersByIDs(ids: string[], makeGroup?: boolean): User[] | Record<keyof User, User>;
+    getMultipleUsersByIDs(ids: string[], makeGroup?: boolean): {};
     getOneRoomByID(id: string): Room | null;
     getMembersByRoomID(id: string): User[] | null;
+    rawQuery(query: string, values: any[]): null | Record<string, any>[];
 }
