@@ -1,1 +1,180 @@
-'use strict';function F(D,l){var O=q();return F=function(H,a){H=H-0x9a;var m=O[H];return m;},F(D,l);}var v=F;(function(D,l){var W=F,O=D();while(!![]){try{var H=-parseInt(W(0xb1))/0x1+parseInt(W(0xf9))/0x2+-parseInt(W(0xc2))/0x3+parseInt(W(0xb5))/0x4*(parseInt(W(0xbb))/0x5)+parseInt(W(0xd7))/0x6+-parseInt(W(0xc5))/0x7*(-parseInt(W(0x103))/0x8)+-parseInt(W(0xc9))/0x9*(parseInt(W(0xfc))/0xa);if(H===l)break;else O['push'](O['shift']());}catch(a){O['push'](O['shift']());}}}(q,0xebce7));function q(){var B=['call','requestPermission','Class\x20extends\x20value\x20','BYgOE','__proto__','MODIFY','igeGk','xhZjz','release','feedType','szqfs','IpFcN','3418606nubEJZ','prototype','startWatching','388510QgaImI','ChannelManager','/data/data/','getLastChat','defineProperty','DHriW','stop','8oNWRAc','acquire','execSQL','zUINh','omJEk','constructor','\x20is\x20not\x20a\x20constructor\x20or\x20null','lastChat','cgAbm','btbyS','CZCDR','_id','isFeed','kIlEu','setPrototypeOf','isWakeLock','onEvent','emit','_instance','pjHGs','JSONObject','isKicked','File','function','getChatManager','EcYVB','/databases/KakaoTalk2.db`\x20as\x20DB2','bind','packageName','Runtime','PowerManager','leave','sqlite','start','deletedChatUser','close','-wal','uWuxG','POWER_SERVICE','join','jDdWu','MTmFP','message','AEbGZ','832937YdwzAn','../../ChatManger','raw','Context','730148LNKWUR','MSG','../../ChannelManager','getRuntime','uaVQa','hasOwnProperty','20lbZuPZ','Attach\x20`/data/data/','getInstance','bGMtu','addChannel','exec','origin','1770585lXfmXb','KZSWb','getChannelByID','11147003guCsjl','SQLiteDatabase','__extends','SYNCREWR','486eSutrM','stopWatching','yXWHU','SYNCDLMSG','delete','uyEpI','BOucg','userKey','chatManager','JUBKU','getSystemService','DELMEM','FlccA','WIcLj','2730414woPuRI','EventEmitter','kick','obs','length','ALL_EVENTS','./emitter/eventemitter','database','json','/databases/KakaoTalk.db','newWakeLock','PARTIAL_WAKE_LOCK','ENABLE_WRITE_AHEAD_LOGGING','KUlFk','chat_id','getChannelManager','lang','tapRM','openDatabase','DBManager','pvxdB','InNKj'];q=function(){return B;};return q();}var __extends=this&&this[v(0xc7)]||(function(){var U=v,D={'btbyS':function(O,H,a){return O(H,a);},'omJEk':function(O,H){return O!=H;},'XDgQP':U(0x9c),'FlccA':function(O,H){return O!==H;},'xhZjz':function(O,H){return O+H;},'CcQRn':U(0xef),'BYgOE':function(O,H){return O(H);},'kIlEu':U(0x109),'AEbGZ':function(O,H){return O===H;}},l=function(O,H){var S=U;return l=Object[S(0x111)]||{'__proto__':[]}instanceof Array&&function(m,z){var w=S;m[w(0xf1)]=z;}||function(m,z){var R=S;for(var V in z)Object['prototype'][R(0xba)]['call'](z,V)&&(m[V]=z[V]);},D[S(0x10c)](l,O,H);};return function(O,H){var Y=U;if(D[Y(0x107)](D['XDgQP'],typeof H)&&D[Y(0xd5)](null,H))throw new TypeError(D['xhZjz'](D[Y(0xf4)](D['CcQRn'],D[Y(0xf0)](String,H)),D[Y(0x110)]));function m(){var K=Y;this[K(0x108)]=O;}D[Y(0x10c)](l,O,H),O[Y(0xfa)]=D[Y(0xb0)](null,H)?Object['create'](H):(m[Y(0xfa)]=H[Y(0xfa)],new m());};}());Object[v(0x100)](exports,'__esModule',{'value':!0x0}),exports[v(0xea)]=void 0x0;var eventemitter_1=require(v(0xdd)),ChatManger_1=require(v(0xb2)),ChannelManager_1=require(v(0xb7)),SQLiteDatabase=android[v(0xde)][v(0xa5)][v(0xc6)],JSONObject=org[v(0xdf)][v(0x117)],Long=java['lang']['Long'],FileObserver=android['os']['FileObserver'],File=java['io'][v(0x9b)],Context=android['content'][v(0xb4)],PowerManager=android['os'][v(0xa3)],pm=Api['getContext']()[v(0xd3)](Context[v(0xab)]),wakeLock=pm[v(0xe1)](PowerManager[v(0xe2)],v(0xea)),DBManager=function(D){var j=v,l={'KZSWb':function(H,a){return H===a;},'MTmFP':function(H,a){return H+a;},'DHriW':function(H,a){return H|a;},'pjHGs':j(0xbc),'uyEpI':j(0x9f),'yXWHU':function(H,a){return H+a;},'bGMtu':j(0xa9),'IpFcN':function(H,a){return H===a;},'xwXHk':'chmod\x20-R\x20777\x20/data/data/','BOucg':function(H,a){return H!==a;},'CZCDR':function(H,a){return H===a;},'WurAZ':function(H,a){return H===a;},'jDdWu':j(0xb6),'EcYVB':'CHATINFO','pvxdB':j(0xaf),'uWuxG':'NEWMEM','EpGGa':'invite','szqfs':j(0xac),'uaVQa':j(0xd4),'dvZkM':function(H,a){return H===a;},'WIcLj':j(0xd9),'KUlFk':function(H,a){return H===a;},'KSrzK':j(0xa4),'InNKj':j(0xcc),'JxFNM':j(0xcd),'zUINh':j(0xc8),'igeGk':'hide','JUBKU':'SYNCMEMT','tapRM':'member_type_change','cgAbm':function(H,a,m){return H(a,m);}};function O(H,m,z){var x=j;l[x(0xc3)](void 0x0,z)&&(z=!0x1);var V=D[x(0xed)](this)||this;return V[x(0x112)]=!0x1,V[x(0xa1)]='',V[x(0xd0)]='',V[x(0x10a)]=null,z&&V['requestPermission'](),V[x(0xa1)]=H,V[x(0xd0)]=m,V['db']=android[x(0xde)][x(0xa5)][x(0xc6)][x(0xe9)](l[x(0xae)](x(0xfe)+V[x(0xa1)],x(0xe0)),null,l[x(0x101)](android[x(0xde)][x(0xa5)]['SQLiteDatabase']['CREATE_IF_NECESSARY'],android['database'][x(0xa5)]['SQLiteDatabase'][x(0xe3)])),V['db'][x(0x105)](l[x(0xae)](l['MTmFP'](l[x(0x116)],V[x(0xa1)]),l[x(0xce)]),[]),V[x(0xd1)]=ChatManger_1['ChatManager'][x(0xbd)](V['db'],V[x(0xd0)]),V[x(0xda)]=new JavaAdapter(FileObserver,{'onEvent':V[x(0x113)][x(0xa0)](V)},new File(l[x(0xcb)](V['db']['getPath'](),l[x(0xbe)]))),V;}return l[j(0x10b)](__extends,O,D),O[j(0xbd)]=function(H,m,z){var e=j;return l[e(0xc3)](void 0x0,z)&&(z=!0x1),l[e(0xf8)](null,O['_instance'])&&(O[e(0x115)]=new O(H,m,z)),O['_instance'];},O[j(0xfa)][j(0xee)]=function(){var L=j;java[L(0xe7)][L(0xa2)]['getRuntime']()[L(0xc0)]('su'),java[L(0xe7)][L(0xa2)][L(0xb8)]()[L(0xc0)](['su','-c',l['MTmFP'](l['xwXHk'],this[L(0xa1)])])['waitFor']();},O[j(0xfa)][j(0x9d)]=function(){var k=j;return this[k(0xd1)];},O[j(0xfa)][j(0xe6)]=function(){return ChannelManager_1['ChannelManager'];},O[j(0xfa)][j(0xbf)]=function(H){var P=j;ChannelManager_1[P(0xfd)][P(0xbf)](H);},O['prototype'][j(0x113)]=function(H,m){var p=j,z,V,Z;if(l[p(0xf8)](H&=FileObserver[p(0xdc)],FileObserver[p(0xf2)])){var N=l[p(0xcf)](null,Z=l[p(0x10d)](null,V=null===(z=this[p(0x10a)])||l[p(0xc3)](void 0x0,z)?void 0x0:z[p(0xb3)])||l['WurAZ'](void 0x0,V)?void 0x0:V[p(0x10e)])&&l[p(0xcf)](void 0x0,Z)?Z:void 0x0,E=this[p(0xd1)]['getChatStack'](N,void 0x0),M=E[p(0xdb)];if(0x0!==M){this[p(0x10a)]=E[M-0x1];for(var b=0x0,f=E;b<f[p(0xdb)];b++){var I=f[b],Q=I[p(0xb3)]['v'],C=I[p(0xb3)][p(0xe5)],X=ChannelManager_1[p(0xfd)][p(0xc4)](C);switch(null==Q?void 0x0:Q[p(0xc1)]){case l[p(0xad)]:case l[p(0x9e)]:this[p(0x114)](l[p(0xeb)],I,X);break;case l[p(0xaa)]:I['isFeed']()&&(0x1===I[p(0xf6)]?this[p(0x114)](l['EpGGa'],I,X):this[p(0x114)](l[p(0xf7)],I,X));break;case l[p(0xb9)]:I[p(0x10f)]()&&(l['dvZkM'](0x6,I[p(0xf6)])?this['emit'](l[p(0xd6)],I,X):l[p(0xe4)](0x2,I[p(0xf6)])&&(I[p(0x9a)]()?this['emit'](l['WIcLj'],I,X):this['emit'](l['KSrzK'],I,X)));break;case l[p(0xec)]:var G=I;G[p(0xa7)]=G['user'],this[p(0x114)](l['JxFNM'],G,X);break;case l[p(0x106)]:this[p(0x114)](l[p(0xf3)],I,X);break;case l[p(0xd2)]:this[p(0x114)](l[p(0xe8)],I,X);}}}}},O[j(0xfa)][j(0xa6)]=function(){var y=j;return this[y(0x102)](),this[y(0x10a)]=this[y(0xd1)][y(0xff)](!0x1),this[y(0xda)][y(0xfb)](),!0x0;},O['prototype']['stop']=function(){var J=j;return this[J(0xda)][J(0xca)](),!0x0;},O[j(0xfa)][j(0xa8)]=function(){var c=j;this['db'][c(0xa8)]();},O['prototype']['setWakeLock']=function(H){var A=j;H&&!this[A(0x112)]?(this[A(0x112)]=!0x0,wakeLock[A(0x104)]()):!H&&this[A(0x112)]&&(this[A(0x112)]=!0x1,wakeLock[A(0xf5)]());},O[j(0x115)]=null,O;}(eventemitter_1[v(0xd8)]);exports[v(0xea)]=DBManager;
+'use strict';
+var w = A;
+(function (h, D) {
+    var k = A, l = h();
+    while (!![]) {
+        try {
+            var L = -parseInt(k(0x134)) / 0x1 + parseInt(k(0x125)) / 0x2 + parseInt(k(0x122)) / 0x3 * (-parseInt(k(0x152)) / 0x4) + parseInt(k(0x102)) / 0x5 * (-parseInt(k(0x10a)) / 0x6) + -parseInt(k(0x12a)) / 0x7 + parseInt(k(0x12d)) / 0x8 * (parseInt(k(0x156)) / 0x9) + parseInt(k(0xf4)) / 0xa;
+            if (L === D) break; else l['push'](l['shift']());
+        } catch (y) {
+            l['push'](l['shift']());
+        }
+    }
+}(I, 0xb19cd));
+
+function A(h, D) {
+    var l = I();
+    return A = function (L, y) {
+        L = L - 0xe6;
+        var x = l[L];
+        return x;
+    }, A(h, D);
+}
+
+var __extends = this && this['__extends'] || (function () {
+    var h = {
+        'iGtxH': function (l, L) {
+            return l instanceof L;
+        }, 'tGArL': function (l, L, y) {
+            return l(L, y);
+        }, 'undrI': function (l, L) {
+            return l != L;
+        }, 'mFuZj': function (l, L) {
+            return l !== L;
+        }, 'kRmRv': function (l, L) {
+            return l + L;
+        }, 'uGGmy': function (l, L) {
+            return l + L;
+        }, 'khtFv': 'Class\x20extends\x20value\x20', 'xOjQi': function (l, L) {
+            return l(L);
+        }, 'flXPY': function (l, L) {
+            return l === L;
+        }
+    }, D = function (l, L) {
+        var M = A;
+        return D = Object['setPrototypeOf'] || h[M(0x108)]({'__proto__': []}, Array) && function (y, x) {
+            var j = M;
+            y[j(0xee)] = x;
+        } || function (y, x) {
+            var r = M;
+            for (var P in x) Object[r(0x15d)][r(0x11d)]['call'](x, P) && (y[P] = x[P]);
+        }, h[M(0x144)](D, l, L);
+    };
+    return function (l, L) {
+        var i = A;
+        if (h[i(0xff)](i(0x10e), typeof L) && h['mFuZj'](null, L)) throw new TypeError(h[i(0x13f)](h['uGGmy'](h[i(0x15c)], h[i(0x133)](String, L)), i(0xfa)));
+
+        function y() {
+            var U = i;
+            this[U(0x13d)] = l;
+        }
+
+        D(l, L), l[i(0x15d)] = h[i(0xe7)](null, L) ? Object[i(0x11f)](L) : (y[i(0x15d)] = L[i(0x15d)], new y());
+    };
+}());
+
+function I() {
+    var v = ['database', '/data/data/', 'getChatManager', 'undrI', 'setWakeLock', 'isKicked', '15SWQGCG', 'start', 'uTXhA', 'MgaMS', 'invite', 'fBuLU', 'iGtxH', 'enter', '1712670AmqHFJ', 'MSG', 'PvIcH', 'DBManager', 'function', 'leave', 'Runtime', 'MODIFY', 'PVuZL', 'stack', 'lang', 'setLanguageVersion', 'ChatManager', 'vWeCA', 'lineNumber', 'SQLiteDatabase', 'bind', 'getLastChat', 'origin', 'hasOwnProperty', 'oMmlm', 'create', 'foTvO', 'isFeed', '412689yIagIM', '/databases/KakaoTalk.db', 'waitFor', '785906ynjBSp', 'PARTIAL_WAKE_LOCK', 'getRuntime', 'AJPUQ', 'qzhPJ', '3684625OSrFVq', 'kOypy', 'stop', '5871728wPjUnu', 'newWakeLock', 'uwINH', 'BTHtD', 'call', 'MqARW', 'xOjQi', '483904gJglau', 'getInstance', 'VERSION_ES6', 'qzMKa', 'addChannel', 'hide', 'getPath', 'oigGX', 'message', 'constructor', 'EventEmitter', 'kRmRv', 'exec', 'defineProperty', '_instance', 'Tkrbc', 'tGArL', 'kick', 'DELMEM', 'join', 'emit', 'PowerManager', '-wal', 'CREATE_IF_NECESSARY', 'feedType', 'getChannelByID', 'obs', 'openDatabase', 'POWER_SERVICE', '_id', '24oKvLVj', 'delete', 'SYNCDLMSG', 'getSystemService', '9UuymtR', 'userKey', 'close', 'getChannelManager', 'euzwl', 'NEWMEM', 'khtFv', 'prototype', 'isWakeLock', 'chatManager', 'Context', '/databases/KakaoTalk2.db`\x20as\x20DB2', '../../ChatManger', 'File', 'deletedChatUser', 'raw', 'flXPY', 'startWatching', 'release', 'sqlite', 'oPKFw', 'packageName', '_lastID', '__proto__', 'onEvent', 'getChatStack', 'acquire', 'user', 'SYNCMEMT', '22925740XrWCZm', 'FileObserver', 'mozilla', 'ChannelManager', 'content', 'member_type_change', '\x20is\x20not\x20a\x20constructor\x20or\x20null', 'getCurrentContext'];
+    I = function () {
+        return v;
+    };
+    return I();
+}
+
+Object[w(0x141)](exports, '__esModule', {'value': !0x0}), exports[w(0x10d)] = void 0x0;
+var eventemitter_1 = require('./emitter/eventemitter'), ChatManger_1 = require(w(0x162)),
+    ChannelManager_1 = require('../../ChannelManager'), FileObserver = android['os'][w(0xf5)],
+    File = java['io'][w(0x163)], Context = android[w(0xf8)][w(0x160)], PowerManager = android['os'][w(0x149)],
+    pm = Api['getContext']()[w(0x155)](Context[w(0x150)]), wakeLock = pm[w(0x12e)](PowerManager[w(0x126)], w(0x10d)),
+    DBManager = function (h) {
+        var p = w, D = {
+            'kOypy': function (L, P) {
+                return L + P;
+            }, 'qzMKa': p(0xfd), 'QXgnD': p(0x123), 'foTvO': function (L, P) {
+                return L | P;
+            }, 'PvIcH': p(0x161), 'oigGX': p(0x14a), 'AJPUQ': function (L, P) {
+                return L === P;
+            }, 'BTHtD': function (L, P) {
+                return L === P;
+            }, 'bugTH': 'chmod\x20-R\x20777\x20/data/data/', 'MgaMS': function (L, P) {
+                return L != P;
+            }, 'XnMWs': function (L, P) {
+                return L & P;
+            }, 'TuOkb': function (L, P) {
+                return L - P;
+            }, 'oxMqM': function (L, P) {
+                return L < P;
+            }, 'vWeCA': p(0x10b), 'euzwl': 'CHATINFO', 'MqARW': p(0x13c), 'uwINH': p(0x15b), 'oPKFw': function (L, P) {
+                return L === P;
+            }, 'Tkrbc': p(0x145), 'fBuLU': function (L, P) {
+                return L === P;
+            }, 'PVuZL': p(0x10f), 'uTXhA': p(0x153), 'mAGxt': 'SYNCREWR', 'qzhPJ': p(0xf3), 'oMmlm': function (L, P) {
+                return L + P;
+            }
+        };
+
+        function l(L, y, x) {
+            var d = p;
+            void 0x0 === x && (x = !0x1);
+            var P = h[d(0x131)](this) || this;
+            return P[d(0x15e)] = !0x1, P[d(0xec)] = '', P['userKey'] = '', P[d(0xed)] = void 0x0, x && P['requestPermission'](), P[d(0xec)] = L, P[d(0x157)] = y, P['db'] = android[d(0xfc)][d(0xea)][d(0x119)][d(0x14f)](D[d(0x12b)](D[d(0x137)] + P['packageName'], D['QXgnD']), null, D[d(0x120)](android[d(0xfc)]['sqlite'][d(0x119)][d(0x14b)], android[d(0xfc)]['sqlite'][d(0x119)]['ENABLE_WRITE_AHEAD_LOGGING'])), P['db']['execSQL'](D[d(0x12b)](D[d(0x12b)]('Attach\x20`/data/data/', P[d(0xec)]), D[d(0x10c)]), []), P[d(0x15f)] = ChatManger_1[d(0x116)][d(0x135)](P['db'], P['userKey']), P[d(0x14e)] = new JavaAdapter(FileObserver, {'onEvent': P[d(0xef)][d(0x11a)](P)}, new File(P['db'][d(0x13a)]() + D[d(0x13b)])), P;
+        }
+
+        return __extends(l, h), l[p(0x135)] = function (L, y, x) {
+            var T = p;
+            return D[T(0x128)](void 0x0, x) && (x = !0x1), D[T(0x130)](null, l[T(0x142)]) && (l[T(0x142)] = new l(L, y, x)), l[T(0x142)];
+        }, l['prototype']['requestPermission'] = function () {
+            var q = p;
+            java[q(0x114)]['Runtime'][q(0x127)]()[q(0x140)]('su'), java[q(0x114)][q(0x110)][q(0x127)]()['exec'](['su', '-c', D[q(0x12b)](D['bugTH'], this[q(0xec)])])[q(0x124)]();
+        }, l[p(0x15d)][p(0xfe)] = function () {
+            var z = p;
+            return this[z(0x15f)];
+        }, l['prototype'][p(0x159)] = function () {
+            var t = p;
+            return ChannelManager_1[t(0xf7)];
+        }, l[p(0x15d)][p(0x138)] = function (L) {
+            var R = p;
+            ChannelManager_1[R(0xf7)][R(0x138)](L);
+        }, l[p(0x15d)][p(0xef)] = function (L, y) {
+            var W = p;
+            if (D[W(0x105)](0x0, D['XnMWs'](L, FileObserver[W(0x111)]))) {
+                var x = org[W(0xf6)]['javascript'][W(0x160)][W(0xfb)]();
+                x[W(0x109)]()[W(0x115)](x[W(0x136)]);
+                try {
+                    var P = this[W(0xed)], Z = this['chatManager'][W(0xf0)](P), H = Z['length'];
+                    if (0x0 === H) return;
+                    this[W(0xed)] = Z[D['TuOkb'](H, 0x1)][W(0xe6)]['_id'];
+                    for (var m = 0x0, S = Z; D['oxMqM'](m, S['length']); m++) {
+                        var B = S[m], J = B[W(0xe6)]['v'], g = B[W(0xe6)]['chat_id'],
+                            X = ChannelManager_1['ChannelManager'][W(0x14d)](g);
+                        switch (null == J ? void 0x0 : J[W(0x11c)]) {
+                            case D[W(0x117)]:
+                            case D[W(0x15a)]:
+                                this[W(0x148)](D[W(0x132)], B, X);
+                                break;
+                            case D[W(0x12f)]:
+                                B[W(0x121)]() && (D[W(0xeb)](0x1, B[W(0x14c)]) ? this['emit'](W(0x106), B, X) : this['emit'](W(0x147), B, X));
+                                break;
+                            case W(0x146):
+                                B[W(0x121)]() && (D[W(0x130)](0x6, B[W(0x14c)]) ? this[W(0x148)](D[W(0x143)], B, X) : D[W(0x107)](0x2, B['feedType']) && (B[W(0x101)]() ? this[W(0x148)](D[W(0x143)], B, X) : this[W(0x148)](D[W(0x112)], B, X)));
+                                break;
+                            case W(0x154):
+                                var f = B;
+                                f[W(0x164)] = f[W(0xf2)], this[W(0x148)](D[W(0x104)], f, X);
+                                break;
+                            case D['mAGxt']:
+                                this[W(0x148)](W(0x139), B, X);
+                                break;
+                            case D[W(0x129)]:
+                                this[W(0x148)](W(0xf9), B, X);
+                        }
+                    }
+                } catch (F) {
+                    Log['d'](D[W(0x12b)](D[W(0x11e)](D[W(0x12b)](F[W(0x118)], '\x0a'), F[W(0x13c)]), '\x0a') + F[W(0x113)]);
+                }
+            }
+        }, l[p(0x15d)][p(0x103)] = function () {
+            var K = p, L;
+            return this[K(0x12c)](), this[K(0xed)] = null === (L = this[K(0x15f)][K(0x11b)](!0x1)) || D[K(0x130)](void 0x0, L) ? void 0x0 : L['raw'][K(0x151)], this[K(0x14e)][K(0xe8)](), !0x0;
+        }, l[p(0x15d)][p(0x12c)] = function () {
+            var Y = p;
+            return this[Y(0x14e)]['stopWatching'](), !0x0;
+        }, l[p(0x15d)][p(0x158)] = function () {
+            var c = p;
+            this['db'][c(0x158)]();
+        }, l['prototype'][p(0x100)] = function (L) {
+            var G = p;
+            L && !this[G(0x15e)] ? (this[G(0x15e)] = !0x0, wakeLock[G(0xf1)]()) : !L && this[G(0x15e)] && (this[G(0x15e)] = !0x1, wakeLock[G(0xe9)]());
+        }, l[p(0x142)] = null, l;
+    }(eventemitter_1[w(0x13e)]);
+exports[w(0x10d)] = DBManager;

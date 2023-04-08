@@ -2,7 +2,7 @@ import type { ChatType } from "../../../../types";
 import type { AudioChat, EmoticonChat, FeedChat, FileChat, MapChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, VideoChat } from "./index";
 import type { User } from "../../../UserManger";
 export declare class Chat {
-    protected _user: User;
+    protected _user: User | null;
     protected _chatData: ChatType;
     protected _isHidden: boolean;
     protected _type: number;
@@ -31,7 +31,7 @@ export declare class Chat {
     get raw(): ChatType;
     toJSON(): {
         chat: ChatType;
-        user: User;
+        user: User | null;
     };
     /**
      * 보낸 시각을 가져옵니다

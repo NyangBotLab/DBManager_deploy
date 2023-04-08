@@ -3,7 +3,7 @@ export declare class Channel {
     protected _name: string;
     protected _replyAction: any;
     protected _readAction: any;
-    constructor(id: string, name: string, replayAct: any, readAct: any);
+    constructor(_id: string, _name: string, _replyAction: any, _readAction: any);
     /**
      * 방 고유 아이디
      */

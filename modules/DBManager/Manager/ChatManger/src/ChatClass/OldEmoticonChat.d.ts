@@ -2,7 +2,6 @@ import { Chat } from "./Chat";
 import type { OldEmoticonAttach, OldEmoticonChatType } from "../../../../types";
 import type { User } from "../../../UserManger";
 export declare class OldEmoticonChat extends Chat {
-    private readonly _mentions;
     constructor(obj: OldEmoticonChatType);
     /**
      * 맨션된 사람들 리스트를 가져옵니다

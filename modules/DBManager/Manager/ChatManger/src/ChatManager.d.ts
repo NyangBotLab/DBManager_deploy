@@ -4,7 +4,6 @@ import { Room } from "../../RoomManger";
 export declare class ChatManager {
     private db;
     private userKey;
-    private readonly _thread;
     private static _instance;
     private constructor();
     static getInstance(db?: android.database.sqlite.SQLiteDatabase | null, userKey?: string): ChatManager;

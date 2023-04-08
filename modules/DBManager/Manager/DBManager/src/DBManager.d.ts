@@ -11,7 +11,7 @@ export declare class DBManager extends DBManager_base {
     private readonly db;
     private readonly chatManager;
     private obs;
-    private lastChat;
+    private _lastID?;
     private constructor();
     static getInstance(packageName: string, userKey: string, getRoot?: boolean): DBManager;
     requestPermission(): void;

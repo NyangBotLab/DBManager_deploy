@@ -1,1 +1,612 @@
-'use strict';var S=F;(function(D,l){var v=F,O=D();while(!![]){try{var H=parseInt(v(0x1d7))/0x1*(-parseInt(v(0x166))/0x2)+parseInt(v(0x1e7))/0x3*(parseInt(v(0x1a3))/0x4)+-parseInt(v(0x203))/0x5*(-parseInt(v(0x18d))/0x6)+parseInt(v(0x1ce))/0x7+-parseInt(v(0x206))/0x8+parseInt(v(0x185))/0x9+-parseInt(v(0x175))/0xa*(parseInt(v(0x1c6))/0xb);if(H===l)break;else O['push'](O['shift']());}catch(a){O['push'](O['shift']());}}}(q,0xceff4));function F(D,l){var O=q();return F=function(H,a){H=H-0x144;var m=O[H];return m;},F(D,l);}var __importDefault=this&&this['__importDefault']||function(D){var U=F;return D&&D[U(0x1ad)]?D:{'default':D};};function q(){var qq=['text','default','link_id','IpQCv','PudDi','select','BPMcY','azOFx','feedType','MultiPhotoChat','4156470RwNaTt','MapChat','ReplyChat','XedwT','story_user_id','values','PVofl','sPyfT','1734KUqzEr','PhoKb','pPPDl','dzaBn','OldEmoticonChat','lWAMc','cARyF','supplyAsync','board_v','2|0|4|5|1|3','HandOverFeed','fsNyb','getColumnCount','anQQz','SELECT\x20id\x20FROM\x20chat_logs\x20WHERE\x20prev_id\x20=\x20?','user_type','Cursor','yWfQg','cursorToUserInterface','last_read_log_id','reduce','blocked','8XrgvEe','FeedChat','status_message','IyGPa','cursorToUser','SELECT\x20','FIELD_TYPE_FLOAT','ext','getString','rfnhb','__esModule','cursorToChatLog','fvWXj','ASMgm','XcOsR','GzsgA','DB2.friends','xoTsO','XYqgI','ChatManager','Lnqem','pQBBk','yanpR','cursorToRoomLog','moveToFirst','bQuPh','attachment','khBCQ','rZtzJ','Room','ZCjVi','push','purged','getColumnNames','UcBTt','847NaYGiZ','OGFwE','GzUwT','deleted_at','OpenUser','LsxXH','getMembersByRoomID','AcKpW','6536747HGJvDy','includes','UNwpw','LeaveFeed','VyOpm','supplement','User','\x20FROM\x20chat_logs\x20WHERE\x20_id\x20>\x20?\x20AND\x20_id\x20<=\x20?\x20ORDER\x20BY\x20_id','user','258438GUTVRZ','xgsPS','dZgdd','forEach','last_updated_at','AeoGw','get','parse','moim_meta','private_meta','ZzlGc','FsVaD','eOchR','client_message_id','status_action_token','referer','2526837dAuXJk','../decrypt','GReVc','from','original_profile_image_url','wejJK','UuZkk','ShITB','QOwTk','YjYjW','user_id','getLong','getPrevChatByID','getLastChat','rawQuery','last_update_seen_id','name','last_log_id','AGTUj','yUopB','pRcuu','tXSwX','qXDkK','unread_count','HkPGi','Wkmbp','ZwxzI','XzKeh','155bGkwAZ','Wxhyb','yFNcp','1446712shQlto','active_member_ids','Qjpol','MAX_SAFE_INTEGER','getChatByLogID','concurrent','contact_id','JGxPW','where','enc','getOneRoomByID','tAGhY','../../../BigJSON','QqMXQ','getAlreadyInstance','AudioChat','PhotoChat','yGYxt','getOneUserByID','raw','prototype','id,_id,type,chat_id,user_id,message,attachment,created_at,prev_id,v','OpenRoom','HTPNe','created_at','SELECT\x20*\x20FROM\x20chat_rooms\x20WHERE\x20id\x20=\x20?','tuWpP','FIELD_TYPE_INTEGER','defineProperty','moveToNext','gNGib','FMBjF','../../UserManger','ExOdc','mhZJO','Wlcjy','Executors','UkHzD','Zfrkz','LJyPT','getFloat','OpenChatKickedFeed','blinded_member_ids','moveToLast','owgpI','userKey','lLyhh','아직\x20없음','userInterfaceToUser','SbMDS','database','new_badge_seen_at','NormalChat','util','_thread','TNdcZ','MHyRm','4|0|1|3|2','kSJKs','getNextChatID','active_members_count','EYEDG','dxpUt','1|2|4|3|0','length','last_message','qmoNF','newFixedThreadPool','DeleteFeed','_id','HkEeb','suspended','close','rDyyJ','members','OpenChatJoinedFeed','message','temporary_message','involved_chat_ids','getPrevChatID','isArray','type','8|9|5|6|2|0|3|7|1|4','wwqBO','oUohs','\x20FROM\x20DB2.friends\x20WHERE\x20id\x20=\x20?','\x20FROM\x20chat_logs\x20WHERE\x20id\x20=\x20?','./ChatClass','EmoticonChat','split','mute_until_at','brand_new','kskGP','decrypt','2DtlFMJ','account_id','new_badge_updated_at','toZkG','getColumnName','member_type','JJpIy','ffGPR','4|1|3|2|0','FileChat','BigJSON','_instance','last_skey_token','getMultipleUsersByIDs','last_chat_log_type','234030TiDxZQ','last_joined_log_id','kliTK','XUWon','sAJGa','getInstance'];q=function(){return qq;};return q();}Object[S(0x222)](exports,S(0x1ad),{'value':!0x0}),exports[S(0x1b6)]=void 0x0;var CursorManager,ChatClass_1=require(S(0x15f)),BigJSON_1=require(S(0x212)),UserManger_1=require(S(0x226)),RoomManger_1=require('../../RoomManger'),sql_bricks_1=__importDefault(require('../../../sql-bricks')),decrypt_1=require(S(0x1e8)),parse=BigJSON_1[S(0x170)][S(0x1de)],CompletableFuture=java[S(0x23b)][S(0x20b)]['CompletableFuture'],Executors=java[S(0x23b)][S(0x20b)][S(0x22a)],CHAT_COLUMN=S(0x21b),USER_COLUMN='id,type,name,\x20profile_image_url\x20,\x20\x20full_profile_image_url,\x20original_profile_image_url,status_message,blocked,v,board_v,user_type,account_id,member_type,enc,created_at',groupBy=function(D,l){var w=S;return D[w(0x1a1)](function(O,H){return O[H[l]]=H,O;},{});},ChatManager=(function(){var R=S,D={'pQBBk':function(O,H){return O===H;},'tuWpP':function(O,H){return O===H;},'BVWwq':R(0x235),'kSJKs':function(O,H){return O===H;},'XUWon':R(0x147),'yFNcp':function(O,H){return O+H;},'Qjpol':R(0x1a8),'ZCjVi':R(0x15e),'wwqBO':function(O,H){return O===H;},'TNdcZ':function(O,H){return O>H;},'IpQCv':'SELECT\x20prev_id\x20FROM\x20chat_logs\x20WHERE\x20id\x20=\x20?','GzUwT':function(O,H){return O(H);},'sPyfT':function(O,H){return O>H;},'BTtFh':R(0x196),'toZkG':function(O,H){return O+H;},'UuZkk':function(O,H){return O+H;},'Lnqem':function(O,H){return O===H;},'qXDkK':function(O,H){return O===H;},'QqMXQ':function(O,H){return O||H;},'PhoKb':R(0x16e),'JNuMz':function(O,H){return O+H;},'VzDIW':function(O,H){return O+H;},'XNFXE':function(O,H){return O===H;},'pjnpv':R(0x15d),'PVofl':R(0x15a),'lLyhh':function(O,H){return O<H;},'mhZJO':function(O,H,a){return O(H,a);},'XzKeh':R(0x1b3),'ewkfs':R(0x21f),'AGTUj':function(O,H){return O!=H;},'dkDmF':function(O,H){return O<H;},'bOIpr':function(O,H){return O===H;},'gNGib':function(O,H){return O(H);}};function l(O,H){var Y=R;D[Y(0x1b8)](void 0x0,H)&&(H=''),this['db']=O,this['userKey']=H,this[Y(0x23c)]=Executors[Y(0x14b)](0x5);}return l[R(0x17a)]=function(O,H){var K=R;if(void 0x0===O&&(O=null),D[K(0x220)](void 0x0,H)&&(H=''),D['pQBBk']('',H)||D[K(0x1b8)](null,O)){if(D[K(0x1b8)](null,l['_instance']))throw new Error(D['BVWwq']);return l[K(0x171)];}return D['tuWpP'](null,l[K(0x171)])&&(l[K(0x171)]=new l(O,H)),l[K(0x171)];},l[R(0x214)]=function(){var j=R;if(D[j(0x240)](null,l[j(0x171)]))throw new Error(D['BVWwq']);return l[j(0x171)];},l[R(0x21a)]['getChatByLogID']=function(O,H){var x=R,m=D[x(0x178)][x(0x161)]('|'),z=0x0;while(!![]){switch(m[z++]){case'0':return u[x(0x150)](),H&&(Z[x(0x1d6)]=this[x(0x218)](Z['raw'][x(0x1f1)])),Z;case'1':D['pQBBk'](void 0x0,H)&&(H=!0x0);continue;case'2':var V=D[x(0x205)](D[x(0x208)],CHAT_COLUMN)+D[x(0x1c1)],u=this['db']['rawQuery'](V,[O]);continue;case'3':var Z=CursorManager[x(0x1ae)](u,this[x(0x233)]);continue;case'4':if(!u['moveToFirst']())return null;continue;}break;}},l[R(0x21a)][R(0x157)]=function(O,H){var e=R;D['wwqBO'](void 0x0,O)&&(O=''),D['kSJKs'](void 0x0,H)&&(H=0x1);for(var m=O;D[e(0x23d)](H,0x0);){var z=this['db'][e(0x1f5)](D[e(0x17e)],[m]);if(!z[e(0x1bb)]())return null;m=D[e(0x1c8)](String,z[e(0x1ab)](0x0)),H--;}return m;},l[R(0x21a)][R(0x241)]=function(O,H){var L=R;void 0x0===H&&(H=0x1);for(var m=O;D[L(0x18c)](H,0x0);){var z=this['db'][L(0x1f5)](L(0x19b),[m]);if(!z[L(0x1bb)]())return null;m=D[L(0x1c8)](String,z['getString'](0x0)),H--;}return m;},l[R(0x21a)][R(0x1f3)]=function(O,H){void 0x0===H&&(H=0x1);var a=this['getPrevChatID'](O,H);return D['tuWpP'](null,a)?null:this['getChatByLogID'](a);},l[R(0x21a)]['getNextChatByID']=function(O,H){var k=R;void 0x0===H&&(H=0x1);var a=this[k(0x241)](O,H);return D[k(0x15b)](null,a)?null:this[k(0x20a)](a);},l[R(0x21a)]['getChatStack']=function(O,H,m){var P=R,z=D['BTtFh']['split']('|'),V=0x0;while(!![]){switch(z[V++]){case'0':var Z=D[P(0x169)](D['UuZkk'](P(0x1a8),CHAT_COLUMN),P(0x1d5)),h=this['db']['rawQuery'](Z,[O,H]),g=[];continue;case'1':if(h[P(0x150)](),m){var N=new Set(g['map'](function(Q){var p=P;return Q[p(0x219)][p(0x1f1)];})),E=this[P(0x173)](Array[P(0x1ea)](N),!0x0);if(!Array[P(0x158)](E))for(var M=0x0,b=g;M<b['length'];M++){var f=b[M];f['user']=E[f[P(0x219)][P(0x1f1)]];}}continue;case'2':D[P(0x240)](void 0x0,O)&&(O=void 0x0),D[P(0x1b7)](void 0x0,H)&&(H=void 0x0),D[P(0x1fd)](void 0x0,m)&&(m=!0x0),O=D[P(0x213)](O,'0'),H=H||String(Number[P(0x209)]);continue;case'3':return g;case'4':if(!h['moveToFirst']())return g;continue;case'5':do{var I=CursorManager[P(0x1ae)](h,this[P(0x233)]);g[P(0x1c2)](I);}while(h[P(0x223)]());continue;}break;}},l[R(0x21a)][R(0x1f4)]=function(O){var y=R,H=D[y(0x18e)][y(0x161)]('|'),m=0x0;while(!![]){switch(H[m++]){case'0':return V[y(0x150)](),O&&(u[y(0x1d6)]=this['getOneUserByID'](u[y(0x219)][y(0x1f1)])),u;case'1':var z=D['JNuMz'](D['VzDIW']('SELECT\x20',CHAT_COLUMN),'\x20FROM\x20chat_logs'),V=this['db'][y(0x1f5)](z,[]);continue;case'2':var u=CursorManager['cursorToChatLog'](V,this[y(0x233)]);continue;case'3':if(!V[y(0x231)]())return null;continue;case'4':D['XNFXE'](void 0x0,O)&&(O=!0x0);continue;}break;}},l[R(0x21a)]['getOneUserByID']=function(O){var J=R,H=D[J(0x169)](D[J(0x1ed)](J(0x1a8),USER_COLUMN),D['pjnpv']),m=this['db'][J(0x1f5)](H,[O]);if(!m['moveToLast']())return null;var z=CursorManager[J(0x1a7)](m,this[J(0x233)]);return m[J(0x150)](),z;},l[R(0x21a)]['getMultipleUsersByIDs']=function(O,H){var c=R,m=D[c(0x18b)][c(0x161)]('|'),z=0x0;while(!![]){switch(m[z++]){case'0':do{h[c(0x1c2)](CursorManager[c(0x19f)](M));}while(M[c(0x223)]());continue;case'1':for(var V=0x0;D[c(0x234)](V,b['length']);V++){var Z=b[V][c(0x1dd)]();N['push'](Z);}continue;case'2':var h=[];continue;case'3':M[c(0x150)]();continue;case'4':return H?D[c(0x228)](groupBy,N,'id'):N;case'5':var N=[],E=sql_bricks_1[c(0x17c)][c(0x180)](USER_COLUMN)['from'](D[c(0x202)])[c(0x20e)]({'id[^]':O})['prepare'](),M=this['db']['rawQuery'](E[c(0x17b)],E[c(0x18a)]);continue;case'6':if(!M['moveToFirst']())return H?{}:[];continue;case'7':for(var b=[],f=function(G){var A=c,W=CompletableFuture[A(0x194)](function(){var B=A;return CursorManager[B(0x236)](G,X[B(0x233)]);},I[A(0x23c)]);b[A(0x1c2)](W);},I=this,Q=0x0,C=h;D[c(0x234)](Q,C['length']);Q++){f(V=C[Q]);}continue;case'8':var X=this;continue;case'9':void 0x0===H&&(H=!0x1);continue;}break;}},l[R(0x21a)][R(0x210)]=function(O){var d=R,H=this['db'][d(0x1f5)](D['ewkfs'],[O]);if(!H[d(0x231)]())return null;var a=CursorManager[d(0x1ba)](H,this[d(0x233)]);return H['close'](),a;},l[R(0x21a)][R(0x1cc)]=function(O){var T=R,H=this['db'][T(0x1f5)]('SELECT\x20active_member_ids\x20FROM\x20chat_rooms\x20WHERE\x20id\x20=\x20?',[O]);if(!H[T(0x231)]())return null;var a=parse(D[T(0x1c8)](String,H[T(0x1ab)](0x0)));return H['close'](),this[T(0x173)](a);},l[R(0x21a)][R(0x1f5)]=function(O,H){var q0=R,m=[];try{var z=this['db'][q0(0x1f5)](O,D[q0(0x1f9)](null,H)?H:[]);if(!z[q0(0x1bb)]())return[];var V=+z[q0(0x199)]();do{for(var u={},Z=0x0;D['dkDmF'](Z,V);Z++){var h=D[q0(0x1c8)](String,z[q0(0x16a)](Z));switch(z['getType'](Z)){case android[q0(0x238)][q0(0x19d)][q0(0x1a9)]:if(D['bOIpr'](null,z[q0(0x22e)](Z))){u[h]=null;continue;}u[h]=D['gNGib'](Number,z[q0(0x22e)](Z));break;case android[q0(0x238)]['Cursor'][q0(0x221)]:if(null===z[q0(0x1f2)](Z)){u[h]=null;continue;}u[h]=Number(z[q0(0x1f2)](Z));break;default:if(D[q0(0x1b7)](null,z[q0(0x1ab)](Z))){u[h]=null;continue;}u[h]=D[q0(0x224)](String,z[q0(0x1ab)](Z));}}m[q0(0x1c2)](u);}while(z[q0(0x223)]());return m;}catch(g){return m;}},l[R(0x171)]=null,l;}());exports['ChatManager']=ChatManager,function(D){var q1=S,l={'rfnhb':function(a,m){return a(m);},'JGxPW':q1(0x14d),'kskGP':q1(0x20c),'tAGhY':'chat_id','pPPDl':q1(0x21e),'yUopB':q1(0x189),'DpWFr':q1(0x167),'FsVaD':q1(0x168),'rlMml':q1(0x239),'dxpUt':'type','ZwxzI':'position','ASMgm':q1(0x19c),'WDPSX':q1(0x16b),'qmoNF':q1(0x163),'wejJK':q1(0x1a2),'xoTsO':'hidden','GzsgA':q1(0x1c3),'HkEeb':q1(0x14f),'JJpIy':function(a,m){return a(m);},'AeoGw':q1(0x156),'AcKpW':function(a,m){return a(m);},'GReVc':q1(0x23f),'HTPNe':function(a,m){return a!==m;},'LFOOW':q1(0x1f7),'UDWrA':'profile_image_url','UuZgA':'full_profile_image_url','UkHzD':function(a,m){return a<m;},'OGFwE':function(a,m){return a!==m;},'oUohs':function(a,m,z){return a(m,z);},'XedwT':function(a,m){return a(m);},'azOFx':q1(0x1e4),'HkPGi':q1(0x1e6),'LsxXH':function(a,m){return a(m);},'QOwTk':function(a,m){return a===m;},'rDyyJ':function(a,m){return a==m;},'PudDi':function(a,m){return a===m;},'ShITB':function(a,m){return a===m;},'anQQz':function(a,m){return a===m;},'yGYxt':function(a,m){return a===m;},'nZJYG':q1(0x1f8),'IyGPa':q1(0x1db),'nSsiQ':'schat_token','kCIIA':q1(0x172),'QaQZI':q1(0x17d),'sAJGa':q1(0x176),'yWfQg':q1(0x162),'MHyRm':q1(0x1fe),'Wkmbp':q1(0x144),'ARzBc':q1(0x174),'tXSwX':'is_hint','FMBjF':q1(0x155),'Wxhyb':q1(0x1aa),'BPMcY':q1(0x152),'NGUTM':'watermarks','Wlcjy':'last_pk_tokens','ffGPR':'invite_info','VyOpm':q1(0x230),'xigyX':function(a,m){return a(m);},'fsNyb':'DirectChat','UNwpw':'MultiChat'};function O(m){var q2=q1;for(var z={},V=m[q2(0x1c4)](),u=0x0;u<V[q2(0x148)];u++){var Z=l['rfnhb'](String,V[u]),h=m[q2(0x1ab)](u);switch(Z){case l[q2(0x20d)]:case l[q2(0x164)]:case'id':case l[q2(0x211)]:case l[q2(0x18f)]:case l[q2(0x1fa)]:case l['DpWFr']:case l[q2(0x1e2)]:case l['rlMml']:case q2(0x1e5):default:z[Z]=h&&l[q2(0x1ac)](String,h);break;case l[q2(0x146)]:case q2(0x20f):case l[q2(0x201)]:case l[q2(0x1b0)]:case l['WDPSX']:z[Z]=Number(h);break;case l[q2(0x14a)]:case l[q2(0x1ec)]:case'favorite':case l[q2(0x1b4)]:case l[q2(0x1b2)]:case l[q2(0x14e)]:z[Z]=Boolean(l[q2(0x16c)](Number,h));break;case l[q2(0x1dc)]:z[Z]=l['AcKpW'](parse,l[q2(0x16c)](String,h));}}return z;}function H(m,z){var q3=q1,V=l[q3(0x1e9)][q3(0x161)]('|'),Z=0x0;while(!![]){switch(V[Z++]){case'0':var h=(0x0,decrypt_1['decrypt'])(z,E,m[q3(0x195)]);continue;case'1':m['board_v']=h&&l[q3(0x1cd)](parse,h);continue;case'2':return m['v']=g&&parse(g),0x3e8!==m[q3(0x159)]?new UserManger_1[(q3(0x1d4))](m):new UserManger_1[(q3(0x1ca))](m);case'3':var g=(0x0,decrypt_1['decrypt'])(z,E,m['v']);continue;case'4':for(var N,E=l[q3(0x21d)](null,N=m['enc'])&&l['HTPNe'](void 0x0,N)?N:0x1e,M=0x0,b=[l['LFOOW'],q3(0x1eb),q3(0x1a5),l['UDWrA'],l['UuZgA']];l[q3(0x22b)](M,b[q3(0x148)]);M++){var f=b[M];if(l[q3(0x1c7)]('',m[f])){var I=m[f];m[f]=(0x0,decrypt_1[q3(0x165)])(z,E,I);}}continue;}break;}}D[q1(0x19f)]=O,D['userInterfaceToUser']=H,D[q1(0x1a7)]=function(m,z){var q4=q1;return l[q4(0x15c)](H,l[q4(0x188)](O,m),z);},D[q1(0x1ae)]=function(m,z){var q5=q1,V={'ExOdc':function(I,Q){return l['AcKpW'](I,Q);},'xfDul':l[q5(0x20d)],'bQuPh':l[q5(0x211)],'Dwhsx':l['pPPDl'],'MYqbK':q5(0x1c9),'bHhBD':l[q5(0x182)],'khBCQ':'prev_id','kvcDq':function(I,Q){return l['rfnhb'](I,Q);},'Zfrkz':l[q5(0x146)],'suBfp':l[q5(0x1ff)],'cARyF':function(I,Q){var q6=q5;return l[q6(0x1cb)](I,Q);}},Z,h,g={};m['getColumnNames']()[q5(0x1da)](function(I,Q){var q7=q5;I=V['ExOdc'](String,I);var C=m[q7(0x1ab)](Q);switch(I){case V['xfDul']:case'id':case V[q7(0x1bc)]:case q7(0x1f1):case V['Dwhsx']:case V['MYqbK']:case V['bHhBD']:case V[q7(0x1be)]:g[I]=V['kvcDq'](String,C);break;case V[q7(0x22c)]:case V['suBfp']:g[I]=V[q7(0x227)](Number,C);break;case'v':g[I]=V[q7(0x193)](parse,String(C));break;default:g[I]=C&&String(C);}});var N,E=g['user_id'],M=l['HTPNe'](null,h=l[q5(0x1ef)](null,Z=l[q5(0x151)](null,g)?void 0x0:g['v'])||void 0x0===Z?void 0x0:Z[q5(0x20f)])&&void 0x0!==h?h:0x1e,b=(0x0,decrypt_1['decrypt'])(E,M,g[q5(0x1bd)]),f=(0x0,decrypt_1[q5(0x165)])(E,M,g[q5(0x154)]);switch(g[q5(0x1bd)]=l[q5(0x151)](null,N=b)||l['QOwTk']('',N)?b:parse(b),g[q5(0x154)]=f,0xffffbfff&g[q5(0x159)]){case 0x0:return g[q5(0x154)]=parse(g['message']),l[q5(0x17f)](0x1,g['message'][q5(0x183)])?new ChatClass_1['InviteFeed'](g):0x2===g[q5(0x154)]['feedType']?new ChatClass_1[(q5(0x1d1))](g):l[q5(0x1ef)](0x4,g['message'][q5(0x183)])?new ChatClass_1[(q5(0x153))](g):l[q5(0x1ee)](0x6,g['message'][q5(0x183)])?new ChatClass_1[(q5(0x22f))](g):l[q5(0x19a)](0xb,g[q5(0x154)][q5(0x183)])?new ChatClass_1['PromoteFeed'](g):l[q5(0x1ee)](0xc,g[q5(0x154)][q5(0x183)])?new ChatClass_1['DemoteFeed'](g):l[q5(0x217)](0xe,g[q5(0x154)]['feedType'])?new ChatClass_1[(q5(0x14c))](g):0xf===g[q5(0x154)][q5(0x183)]?new ChatClass_1[(q5(0x197))](g):new ChatClass_1[(q5(0x1a4))](g);case 0x1:return new ChatClass_1[(q5(0x23a))](g);case 0x2:return new ChatClass_1[(q5(0x216))](g);case 0x3:return new ChatClass_1['VideoChat'](g);case 0x5:return new ChatClass_1[(q5(0x215))](g);case 0x6:return new ChatClass_1[(q5(0x191))](g);case 0xc:case 0x14:case 0x19:return new ChatClass_1[(q5(0x160))](g);case 0x10:return new ChatClass_1[(q5(0x186))](g);case 0x12:return new ChatClass_1[(q5(0x16f))](g);case 0x1a:return new ChatClass_1[(q5(0x187))](g);case 0x1b:return new ChatClass_1[(q5(0x184))](g);default:return new ChatClass_1['Chat'](g);}},D[q1(0x1ba)]=function(m,z){var q8=q1,V={'kliTK':function(h,g){return l['JJpIy'](h,g);},'pRcuu':l[q8(0x20d)],'xWLyp':l['nZJYG'],'pQxvn':q8(0x1a0),'SbMDS':q8(0x1f6),'rZtzJ':l[q8(0x1a6)],'LJyPT':l['nSsiQ'],'fUirl':l['kCIIA'],'lWAMc':l['QaQZI'],'nAlLE':l[q8(0x179)],'UcBTt':l[q8(0x19e)],'xgsPS':function(h,g){return h(g);},'XcOsR':l[q8(0x23e)],'eOchR':l[q8(0x200)],'XYqgI':l['ARzBc'],'yDBPv':l[q8(0x1fc)],'dzaBn':function(h,g){return h(g);},'owgpI':l[q8(0x225)],'fvWXj':q8(0x1d3),'AOquX':l[q8(0x204)],'yoTwB':l[q8(0x181)],'ANCSK':q8(0x207),'YjYjW':l['NGUTM'],'EkXHX':q8(0x1e0),'dZgdd':q8(0x1df),'EYEDG':l[q8(0x229)],'yanpR':l[q8(0x16d)],'ZzlGc':l[q8(0x1d2)],'LFzzC':function(h,g){return l['xigyX'](h,g);}},u={};m[q8(0x1c4)]()[q8(0x1da)](function(h,g){var q9=q8;h=V[q9(0x177)](String,h);var N=m[q9(0x1ab)](g);switch(h){case V[q9(0x1fb)]:case'id':case V['xWLyp']:case V['pQxvn']:case V[q9(0x237)]:case V[q9(0x1bf)]:case V[q9(0x22d)]:case V['fUirl']:case V[q9(0x192)]:case V['nAlLE']:case V[q9(0x1c5)]:u[h]=N?V[q9(0x1d8)](String,N):null;break;case V[q9(0x1b1)]:case V[q9(0x1e3)]:case V[q9(0x1b5)]:u[h]=N?Number(N):null;break;case V['yDBPv']:u[h]=N?V['kliTK'](Boolean,V[q9(0x190)](Number,N)):null;break;case V[q9(0x232)]:case'v':case V[q9(0x1af)]:case V['AOquX']:case V['yoTwB']:case V['ANCSK']:case V[q9(0x1f0)]:case'meta':case V['EkXHX']:case V[q9(0x1d9)]:case V[q9(0x145)]:case V[q9(0x1b9)]:case V[q9(0x1e1)]:u[h]=N&&V['LFzzC'](parse,V[q9(0x190)](String,N));break;default:u[h]=N&&String(N);}});var Z=u['v'][q8(0x20f)];return u[q8(0x149)]=(0x0,decrypt_1[q8(0x165)])(z,Z,u[q8(0x149)]),[l[q8(0x198)],l[q8(0x1d0)]][q8(0x1cf)](u['type'])?new RoomManger_1[(q8(0x1c0))](u):new RoomManger_1[(q8(0x21c))](u);};}(CursorManager||(CursorManager={}));
+'use strict';
+var i = A;
+(function (h, D) {
+    var r = A, l = h();
+    while (!![]) {
+        try {
+            var L = -parseInt(r(0x1e3)) / 0x1 + parseInt(r(0x284)) / 0x2 * (-parseInt(r(0x242)) / 0x3) + -parseInt(r(0x220)) / 0x4 + -parseInt(r(0x229)) / 0x5 + parseInt(r(0x277)) / 0x6 + parseInt(r(0x1fc)) / 0x7 * (parseInt(r(0x22e)) / 0x8) + parseInt(r(0x1d5)) / 0x9;
+            if (L === D) break; else l['push'](l['shift']());
+        } catch (y) {
+            l['push'](l['shift']());
+        }
+    }
+}(I, 0xc8422));
+
+function I() {
+    var I4 = ['fHZEG', 'XjUFm', 'PromoteFeed', 'wWpLn', 'hUIse', 'user_id', 'EmoticonChat', 'Enhky', 'suspended', './ChatClass', 'Jnpyg', 'cursorToChatLog', '아직\x20없음', 'zHVEP', 'FIELD_TYPE_FLOAT', 'where', 'position', 'last_updated_at', 'ChatManager', 'IQkGF', 'OpenUser', 'forEach', '49BXjiXy', 'ssGfx', 'VaXpn', 'MultiPhotoChat', 'active_members_count', 'APuYn', 'mWHmv', 'members', 'cursorToUserInterface', 'PhQZK', 'replace', 'IpjJg', 'cursorToChatInterface', 'uHipV', 'VideoChat', 'id,type,name,\x20profile_image_url\x20,\x20\x20full_profile_image_url,\x20original_profile_image_url,status_message,blocked,v,board_v,user_type,account_id,member_type,enc,created_at', 'last_read_log_id', 'TtRgK', 'rawQuery', 'MLLBB', 'dyNZh', 'yIThQ', 'MultiChat', 'cursorToRoomLog', 'private_meta', 'prototype', 'JizfI', 'type', 'full_profile_image_url', 'userKey', 'AudioChat', 'CompletableFuture', 'OpenChatKickedFeed', 'BCdLX', 'cursorToUser', 'member_type', '5998040wqWJdM', 'gGphd', 'PhotoChat', 'moveToFirst', 'JjLzz', 'status_message', 'mXmgH', '../../RoomManger', 'hidden', '3948835pXvEta', 'FIELD_TYPE_INTEGER', 'Wqsvv', 'dJmRC', 'BVYfG', '814456Zjvnho', 'DfwTj', '\x20FROM\x20chat_logs\x20INNER\x20JOIN\x20DB2.friends\x20ON\x20chat_logs.user_id\x20=\x20u_id\x20WHERE\x20chat_logs._id\x20>\x20?\x20AND\x20chat_logs._id\x20<=\x20?\x20ORDER\x20BY\x20chat_logs._id', 'blinded_member_ids', 'iRynF', '../../../BigJSON', 'kPepe', 'CFecl', 'getString', 'NsuuE', 'ScUbl', 'chat_logs.id,chat_logs._id,chat_logs.type,chat_logs.chat_id,chat_logs.user_id,chat_logs.message,chat_logs.attachment,chat_logs.created_at,chat_logs.prev_id,chat_logs.v,\x20DB2.friends.id\x20AS\x20u_id,\x20DB2.friends.type\x20AS\x20u_type,\x20DB2.friends.name\x20AS\x20u_name,\x20DB2.friends.profile_image_url\x20AS\x20u_profile_image_url,\x20DB2.friends.full_profile_image_url\x20AS\x20u_full_profile_image_url,\x20DB2.friends.original_profile_image_url\x20AS\x20u_original_profile_image_url,\x20DB2.friends.status_message\x20AS\x20u_status_message,\x20DB2.friends.blocked\x20AS\x20u_blocked,\x20DB2.friends.v\x20AS\x20u_v,\x20DB2.friends.board_v\x20AS\x20u_board_v,\x20DB2.friends.user_type\x20AS\x20u_user_type,\x20DB2.friends.account_id\x20AS\x20u_account_id,\x20DB2.friends.member_type\x20AS\x20u_member_type,\x20DB2.friends.enc\x20AS\x20u_enc,\x20DB2.friends.created_at\x20AS\x20u_created_at', 'BigJSON', 'getMultipleUsersByIDs', 'getOneUserByID', 'raw', 'SlLBt', 'push', '\x20FROM\x20chat_logs\x20ORDER\x20BY\x20_id\x20DESC\x20LIMIT\x201', 'HandOverFeed', '477771OccsuU', 'blocked', 'hBYxk', 'getFloat', 'getPrevChatID', 'Chat', 'includes', 'DceXE', 'MAX_SAFE_INTEGER', 'soeah', 'fSYUc', 'aysLf', 'profile_image_url', 'original_profile_image_url', 'active_member_ids', 'CqvFx', 'prev_id', 'UYnDw', 'defineProperty', 'Tdpsk', 'getMembersByRoomID', 'message', 'PDReF', 'OnVMA', 'PJSAo', 'Room', 'WXYnz', 'cwEoV', 'user_type', 'default', 'supplement', '../decrypt', '__esModule', 'meInG', 'LgmMp', 'BnxoN', 'attachment', 'SELECT\x20id\x20FROM\x20chat_logs\x20WHERE\x20prev_id\x20=\x20?', 'SELECT\x20active_member_ids\x20FROM\x20chat_rooms\x20WHERE\x20id\x20=\x20?', 'CrKiq', 'DemoteFeed', 'purged', 'invite_info', 'last_skey_token', 'MqTcl', 'concurrent', 'getNextChatID', 'length', 'getColumnNames', 'user', 'yzmGI', 'gBpFj', 'chatInterfaceToUser', '3666792RKiaEv', 'iFlFN', '../../UserManger', 'schat_token', 'LeaveFeed', 'enc', 'XeWQS', 'jxzuC', 'new_badge_seen_at', 'SELECT\x20*\x20FROM\x20chat_rooms\x20WHERE\x20id\x20=\x20?', 'jfcTI', 'AqPxa', 'reduce', '8khxWIY', 'moveToNext', 'userInterfaceToUser', 'cursorToChatUserLog', 'fGaLd', 'ext', '__importDefault', 'ssyFu', 'MapChat', 'chat_id', 'getInstance', 'SELECT\x20', 'IIYMz', '_id', '../../../sql-bricks', 'YiYql', 'VwMpy', '4|2|1|3|0', 'YtRve', 'select', 'last_joined_log_id', 'NormalChat', 'created_at', 'database', 'account_id', 'last_log_id', 'MMFee', 'ROYCY', '_instance', 'OpenRoom', 'RFWJn', 'referer', 'puKEC', 'ahKsN', 'values', 'getColumnCount', 'KRpMY', 'is_hint', 'from', 'feedType', 'fxYoT', 'hJQli', 'uvzji', 'moim_meta', 'TdzsX', 'KqtFD', 'moveToLast', 'KtUyT', 'get', 'getChatStack', 'JvIVL', 'brand_new', 'getType', 'getPrevChatByID', 'last_chat_log_type', 'shutdown', 'LpXlh', 'getLong', 'util', 'LrXKu', 'FeedChat', 'DirectChat', 'jCkUp', 'getOneRoomByID', 'split', 'Cursor', 'meta', 'PIADJ', 'DB2.friends', '3|1|4|2|0', 'last_message', 'getChatByLogID', 'id,_id,type,chat_id,user_id,message,attachment,created_at,prev_id,v', 'new_badge_updated_at', 'watermarks', 'dqTsC', 'eFCIr', 'xPTUy', 'mute_until_at', 'story_user_id', 'hERaD', 'board_v', '24978258wyMkqt', 'supplyAsync', 'VJMlT', 'wyvWU', '\x20FROM\x20chat_logs\x20INNER\x20JOIN\x20DB2.friends\x20ON\x20chat_logs.user_id\x20=\x20u_id\x20WHERE\x20chat_logs.id\x20=\x20?', 'getAlreadyInstance', 'uVpuC', 'XLBUe', 'czqmU', 'InviteFeed', '\x20FROM\x20DB2.friends\x20WHERE\x20id\x20=\x20?', 'close', 'name', 'OldEmoticonChat', '352580NMpoqj', 'ReplyChat', 'aauPX'];
+    I = function () {
+        return I4;
+    };
+    return I();
+}
+
+var __importDefault = this && this[i(0x28a)] || function (h) {
+    var U = i;
+    return h && h[U(0x262)] ? h : {'default': h};
+};
+Object[i(0x254)](exports, i(0x262), {'value': !0x0}), exports[i(0x1f8)] = void 0x0;
+var CursorManager, ChatClass_1 = require(i(0x1ef)), BigJSON_1 = require(i(0x233)), UserManger_1 = require(i(0x279)),
+    RoomManger_1 = require(i(0x227)), sql_bricks_1 = __importDefault(require(i(0x292))),
+    decrypt_1 = __importDefault(require(i(0x261))), parse = BigJSON_1[i(0x23a)]['parse'],
+    CompletableFuture = java['util'][i(0x26f)][i(0x21b)], Executors = java[i(0x1bd)][i(0x26f)]['Executors'],
+    CHAT_COLUMN = i(0x1cb),
+    CHAT_COLUMN_ARRAY = ['id', i(0x291), i(0x217), 'chat_id', 'user_id', i(0x257), i(0x266), 'created_at', i(0x252), 'v'],
+    USER_COLUMN = i(0x20b),
+    USER_COLUMN_ARRAY = ['id', i(0x217), i(0x1e1), i(0x24e), i(0x218), i(0x24f), i(0x225), i(0x243), 'v', i(0x1d4), i(0x25e), i(0x29c), i(0x21f), 'enc', 'created_at'],
+    CHAT_COLUMN_USER_COLUMN = i(0x239), groupBy = function (h, D) {
+        var w = i;
+        return h[w(0x283)](function (l, L) {
+            return l[L[D]] = L, l;
+        }, {});
+    }, ChatManager = (function () {
+        var p = i, h = {
+            'aauPX': function (l, L) {
+                return l === L;
+            }, 'jCkUp': function (l, L) {
+                return l === L;
+            }, 'Jnpyg': function (l, L) {
+                return l === L;
+            }, 'TtRgK': function (l, L) {
+                return l === L;
+            }, 'jxzuC': '아직\x20없음', 'UYnDw': function (l, L) {
+                return l === L;
+            }, 'iFlFN': function (l, L) {
+                return l + L;
+            }, 'TdzsX': 'SELECT\x20', 'AqPxa': p(0x1d9), 'MLLBB': function (l, L) {
+                return l === L;
+            }, 'lJsBu': function (l, L) {
+                return l > L;
+            }, 'APuYn': 'SELECT\x20prev_id\x20FROM\x20chat_logs\x20WHERE\x20id\x20=\x20?', 'fGaLd': function (l, L) {
+                return l(L);
+            }, 'PIADJ': function (l, L) {
+                return l > L;
+            }, 'wyvWU': p(0x267), 'ujamn': function (l, L) {
+                return l(L);
+            }, 'jfcTI': function (l, L) {
+                return l === L;
+            }, 'aysLf': function (l, L) {
+                return l === L;
+            }, 'uHipV': function (l, L) {
+                return l === L;
+            }, 'Tdpsk': '2|1|0|4|3', 'puKEC': p(0x230), 'XLBUe': function (l, L) {
+                return l === L;
+            }, 'hERaD': function (l, L) {
+                return l || L;
+            }, 'InNhF': function (l, L) {
+                return l(L);
+            }, 'DfwTj': p(0x1c8), 'fSYUc': function (l, L) {
+                return l + L;
+            }, 'ScUbl': function (l, L) {
+                return l + L;
+            }, 'Enhky': p(0x240), 'dJmRC': function (l, L) {
+                return l === L;
+            }, 'gBpFj': function (l, L) {
+                return l + L;
+            }, 'fxYoT': function (l, L) {
+                return l + L;
+            }, 'dyNZh': p(0x1df), 'BCdLX': p(0x1c7), 'hUIse': function (l, L) {
+                return l < L;
+            }, 'ZQZlG': function (l, L, y) {
+                return l(L, y);
+            }, 'soeah': p(0x280), 'OeTGd': p(0x268), 'hBYxk': function (l, L) {
+                return l(L);
+            }, 'VJMlT': function (l, L) {
+                return l(L);
+            }, 'ahKsN': function (l, L) {
+                return l === L;
+            }, 'ZYYtb': function (l, L) {
+                return l(L);
+            }, 'meInG': function (l, L) {
+                return l(L);
+            }, 'MMFee': function (l, L) {
+                return l === L;
+            }
+        };
+
+        function D(l, L) {
+            var d = p;
+            h['aauPX'](void 0x0, L) && (L = ''), this['db'] = l, this[d(0x219)] = L;
+        }
+
+        return D[p(0x28e)] = function (l, L) {
+            var T = p;
+            if (h[T(0x1c1)](void 0x0, l) && (l = null), h[T(0x1c1)](void 0x0, L) && (L = ''), h['jCkUp']('', L) || h[T(0x1f0)](null, l)) {
+                if (null === D[T(0x19f)]) throw new Error(T(0x1f2));
+                return D[T(0x19f)];
+            }
+            return h[T(0x1c1)](null, D['_instance']) && (D[T(0x19f)] = new D(l, L)), D[T(0x19f)];
+        }, D[p(0x1da)] = function () {
+            var q = p;
+            if (h[q(0x20d)](null, D[q(0x19f)])) throw new Error(h[q(0x27e)]);
+            return D[q(0x19f)];
+        }, D[p(0x215)]['getChatByLogID'] = function (l, L) {
+            var z = p;
+            h[z(0x253)](void 0x0, L) && (L = !0x0);
+            var y = h[z(0x278)](h[z(0x1af)], CHAT_COLUMN_USER_COLUMN) + h[z(0x282)], x = this['db'][z(0x20e)](y, [l]);
+            if (!x[z(0x223)]()) return null;
+            var P = CursorManager[z(0x287)](x, this[z(0x219)]);
+            return x[z(0x1e0)](), P;
+        }, D[p(0x215)][p(0x246)] = function (l, L) {
+            var t = p;
+            h[t(0x20f)](void 0x0, l) && (l = ''), h['UYnDw'](void 0x0, L) && (L = 0x1);
+            for (var y = l; h['lJsBu'](L, 0x0);) {
+                var x = this['db']['rawQuery'](h[t(0x201)], [y]);
+                if (!x[t(0x223)]()) return null;
+                y = h[t(0x288)](String, x[t(0x236)](0x0)), L--;
+            }
+            return y;
+        }, D['prototype'][p(0x270)] = function (l, L) {
+            var R = p;
+            h[R(0x1e5)](void 0x0, L) && (L = 0x1);
+            for (var y = l; h[R(0x1c6)](L, 0x0);) {
+                var x = this['db'][R(0x20e)](h[R(0x1d8)], [y]);
+                if (!x['moveToFirst']()) return null;
+                y = h['ujamn'](String, x[R(0x236)](0x0)), L--;
+            }
+            return y;
+        }, D['prototype'][p(0x1b8)] = function (l, L) {
+            var W = p;
+            h[W(0x281)](void 0x0, L) && (L = 0x1);
+            var y = this[W(0x246)](l, L);
+            return h[W(0x20f)](null, y) ? null : this[W(0x1ca)](y);
+        }, D[p(0x215)]['getNextChatByID'] = function (l, L) {
+            var K = p;
+            h[K(0x24d)](void 0x0, L) && (L = 0x1);
+            var y = this[K(0x270)](l, L);
+            return h[K(0x209)](null, y) ? null : this[K(0x1ca)](y);
+        }, D['prototype'][p(0x1b4)] = function (l, L, y) {
+            var Y = p, x = h[Y(0x255)][Y(0x1c3)]('|'), P = 0x0;
+            while (!![]) {
+                switch (x[P++]) {
+                    case'0':
+                        if (!Z[Y(0x223)]()) return [];
+                        continue;
+                    case'1':
+                        var u = h['iFlFN'](h['iFlFN'](Y(0x28f), CHAT_COLUMN_USER_COLUMN), h[Y(0x1a3)]),
+                            Z = this['db'][Y(0x20e)](u, [l, L]), H = [];
+                        continue;
+                    case'2':
+                        h[Y(0x1dc)](void 0x0, l) && (l = void 0x0), h[Y(0x1c1)](void 0x0, L) && (L = void 0x0), void 0x0 === y && (y = !0x0), l = h[Y(0x1d3)](l, '0'), L = L || h['InNhF'](String, Number[Y(0x24a)]);
+                        continue;
+                    case'3':
+                        return Z[Y(0x1e0)](), H;
+                    case'4':
+                        do {
+                            var m = CursorManager[Y(0x287)](Z, this[Y(0x219)]);
+                            H['push'](m);
+                        } while (Z[Y(0x285)]());
+                        continue;
+                }
+                break;
+            }
+        }, D[p(0x215)]['getLastChat'] = function (l) {
+            var c = p, L = h[c(0x22f)]['split']('|'), y = 0x0;
+            while (!![]) {
+                switch (L[y++]) {
+                    case'0':
+                        return P[c(0x1e0)](), l && (u[c(0x273)] = this[c(0x23c)](u[c(0x23d)][c(0x1eb)])), u;
+                    case'1':
+                        var x = h[c(0x24c)](h[c(0x238)](h['TdzsX'], CHAT_COLUMN), h[c(0x1ed)]),
+                            P = this['db'][c(0x20e)](x, []);
+                        continue;
+                    case'2':
+                        var u = CursorManager['cursorToChatLog'](P);
+                        continue;
+                    case'3':
+                        h[c(0x22c)](void 0x0, l) && (l = !0x0);
+                        continue;
+                    case'4':
+                        if (!P['moveToLast']()) return null;
+                        continue;
+                }
+                break;
+            }
+        }, D[p(0x215)][p(0x23c)] = function (l) {
+            var G = p, L = h[G(0x275)](h[G(0x1ab)](G(0x28f), USER_COLUMN), h[G(0x210)]), y = this['db']['rawQuery'](L, [l]);
+            if (!y[G(0x1b1)]()) return null;
+            var x = CursorManager[G(0x21e)](y, this[G(0x219)]);
+            return y['close'](), x;
+        }, D[p(0x215)][p(0x23b)] = function (L, y) {
+            var v = p, x = this;
+            h[v(0x281)](void 0x0, y) && (y = !0x1);
+            var P = [],
+                Z = sql_bricks_1[v(0x25f)][v(0x297)](USER_COLUMN)[v(0x1a9)](h[v(0x21d)])[v(0x1f5)]({'id[^]': L})['prepare'](),
+                H = this['db'][v(0x20e)](Z['text'], Z[v(0x1a5)]);
+            if (!H[v(0x223)]()) return y ? {} : [];
+            var m = [];
+            do {
+                m['push'](CursorManager[v(0x204)](H));
+            } while (H['moveToNext']());
+            H[v(0x1e0)]();
+            for (var S = [], B = Executors['newFixedThreadPool'](0x5), J = function (M) {
+                var b = v, j = CompletableFuture[b(0x1d6)](function () {
+                    var N = b;
+                    return CursorManager[N(0x286)](M, x[N(0x219)]);
+                }, B);
+                S[b(0x23f)](j);
+            }, X = 0x0, f = m; h[v(0x1ea)](X, f[v(0x271)]); X++) {
+                h['InNhF'](J, F = f[X]);
+            }
+            for (var F = 0x0; h[v(0x1ea)](F, S[v(0x271)]); F++) {
+                var k = S[F][v(0x1b3)]();
+                P['push'](k);
+            }
+            return B[v(0x1ba)](), y ? h['ZQZlG'](groupBy, P, 'id') : P;
+        }, D['prototype'][p(0x1c2)] = function (l) {
+            var o = p, L = this['db'][o(0x20e)](h[o(0x24b)], [l]);
+            if (!L[o(0x1b1)]()) return null;
+            var y = CursorManager[o(0x213)](L, this[o(0x219)]);
+            return L[o(0x1e0)](), y;
+        }, D[p(0x215)][p(0x256)] = function (l) {
+            var E = p, L = this['db'][E(0x20e)](h['OeTGd'], [l]);
+            if (!L[E(0x1b1)]()) return null;
+            var y = h[E(0x244)](parse, h[E(0x1d7)](String, L['getString'](0x0)));
+            return L[E(0x1e0)](), this[E(0x23b)](y);
+        }, D[p(0x215)]['rawQuery'] = function (l, L) {
+            var C = p, y = [];
+            try {
+                var x = this['db'][C(0x20e)](l, null != L ? L : []);
+                if (!x[C(0x223)]()) return [];
+                var P = +x[C(0x1a6)]();
+                do {
+                    for (var u = {}, Z = 0x0; Z < P; Z++) {
+                        var H = h[C(0x244)](String, x['getColumnName'](Z));
+                        switch (x[C(0x1b7)](Z)) {
+                            case android[C(0x29b)][C(0x1c4)][C(0x1f4)]:
+                                if (h[C(0x1a4)](null, x['getFloat'](Z))) {
+                                    u[H] = null;
+                                    continue;
+                                }
+                                u[H] = h['ZYYtb'](Number, x[C(0x245)](Z));
+                                break;
+                            case android[C(0x29b)]['Cursor'][C(0x22a)]:
+                                if (null === x[C(0x1bc)](Z)) {
+                                    u[H] = null;
+                                    continue;
+                                }
+                                u[H] = h[C(0x263)](Number, x[C(0x1bc)](Z));
+                                break;
+                            default:
+                                if (h[C(0x19d)](null, x[C(0x236)](Z))) {
+                                    u[H] = null;
+                                    continue;
+                                }
+                                u[H] = String(x[C(0x236)](Z));
+                        }
+                    }
+                    y[C(0x23f)](u);
+                } while (x[C(0x285)]());
+                return y;
+            } catch (m) {
+                return y;
+            }
+        }, D[p(0x19f)] = null, D;
+    }());
+
+function A(h, D) {
+    var l = I();
+    return A = function (L, y) {
+        L = L - 0x19c;
+        var x = l[L];
+        return x;
+    }, A(h, D);
+}
+
+exports[i(0x1f8)] = ChatManager, function (h) {
+    var e = i, D = {
+        'ROYCY': function (Z, H) {
+            return Z === H;
+        },
+        'gGphd': function (Z, H) {
+            return Z(H);
+        },
+        'CqvFx': '_id',
+        'LrXKu': 'contact_id',
+        'kPepe': e(0x29a),
+        'ssGfx': e(0x1d2),
+        'LpXlh': e(0x1cc),
+        'frvij': 'status_action_token',
+        'MqTcl': function (Z, H) {
+            return Z(H);
+        },
+        'yIThQ': e(0x217),
+        'IQkGF': e(0x27c),
+        'BVYfG': e(0x1f6),
+        'zHVEP': e(0x21f),
+        'IIYMz': function (Z, H) {
+            return Z(H);
+        },
+        'WgHzL': e(0x243),
+        'JjLzz': 'favorite',
+        'OnVMA': e(0x228),
+        'lxsWl': e(0x26b),
+        'JvIVL': e(0x1ee),
+        'CrKiq': 'involved_chat_ids',
+        'wWpLn': function (Z, H) {
+            return Z(H);
+        },
+        'qtNQi': e(0x295),
+        'czqmU': function (Z, H) {
+            return Z(H);
+        },
+        'PDReF': function (Z, H) {
+            return Z !== H;
+        },
+        'ZwrSb': e(0x1e1),
+        'JizfI': e(0x24f),
+        'NsuuE': function (Z, H) {
+            return Z < H;
+        },
+        'CFecl': function (Z, H) {
+            return Z !== H;
+        },
+        'ynqJh': function (Z, H, m) {
+            return Z(H, m);
+        },
+        'mXmgH': e(0x1eb),
+        'gAbQg': 'deleted_at',
+        'Pwrok': 'client_message_id',
+        'XjUFm': e(0x252),
+        'LgmMp': e(0x1a2),
+        'VwMpy': function (Z, H) {
+            return Z(H);
+        },
+        'yzmGI': function (Z, H) {
+            return Z !== H;
+        },
+        'hJQli': function (Z, H) {
+            return Z === H;
+        },
+        'DceXE': function (Z, H) {
+            return Z == H;
+        },
+        'WXYnz': function (Z, H) {
+            return Z === H;
+        },
+        'Wqsvv': function (Z, H) {
+            return Z === H;
+        },
+        'KtUyT': function (Z, H) {
+            return Z === H;
+        },
+        'jvsat': function (Z, H, m) {
+            return Z(H, m);
+        },
+        'PJSAo': function (Z, H) {
+            return Z(H);
+        },
+        'fHZEG': function (Z, H, m, S) {
+            return Z(H, m, S);
+        },
+        'CHzkw': function (Z, H) {
+            return Z(H);
+        },
+        'KqtFD': e(0x19c),
+        'cwEoV': 'last_update_seen_id',
+        'ssyFu': e(0x1f7),
+        'PhQZK': e(0x27a),
+        'mWHmv': e(0x26d),
+        'XeWQS': 'link_id',
+        'BnxoN': e(0x298),
+        'IpjJg': e(0x1d1),
+        'RFWJn': function (Z, H) {
+            return Z(H);
+        },
+        'uVpuC': 'unread_count',
+        'YiYql': e(0x200),
+        'hHVuB': e(0x1b9),
+        'mFFqm': e(0x1a8),
+        'xPTUy': e(0x260),
+        'SlLBt': e(0x289),
+        'uvzji': e(0x203),
+        'eFCIr': e(0x250),
+        'iRynF': e(0x214),
+        'KRpMY': e(0x1ae),
+        'OMtYW': 'last_pk_tokens',
+        'YtRve': e(0x26c),
+        'BStqR': e(0x231),
+        'VaXpn': function (Z, H) {
+            return Z(H);
+        },
+        'dqTsC': e(0x1c0)
+    };
+
+    function l(Z, H) {
+        var s = e;
+        D[s(0x19e)](void 0x0, H) && (H = '');
+        for (var m = {}, S = Z[s(0x272)](), B = 0x0; B < S[s(0x271)]; B++) {
+            var J = D[s(0x221)](String, S[B])['replace'](H, ''), g = Z[s(0x236)](B);
+            switch (J) {
+                case D[s(0x251)]:
+                case D[s(0x1be)]:
+                case'id':
+                case s(0x28d):
+                case D[s(0x234)]:
+                case D[s(0x1fd)]:
+                case s(0x29c):
+                case D[s(0x1bb)]:
+                case s(0x27f):
+                case D['frvij']:
+                    m[J] = g && D[s(0x26e)](String, g);
+                    break;
+                case D[s(0x211)]:
+                case D[s(0x1f9)]:
+                case D[s(0x22d)]:
+                case'user_type':
+                case D[s(0x1f3)]:
+                    m[J] = D[s(0x290)](Number, g);
+                    break;
+                case s(0x1b6):
+                case D['WgHzL']:
+                case D[s(0x224)]:
+                case D[s(0x259)]:
+                case D['lxsWl']:
+                case D[s(0x1b5)]:
+                    m[J] = D[s(0x26e)](Boolean, Number(g));
+                    break;
+                case D[s(0x269)]:
+                    m[J] = D[s(0x26e)](parse, D[s(0x26e)](String, g));
+                    break;
+                default:
+                    USER_COLUMN_ARRAY[s(0x248)](J) && (m[J] = g && D[s(0x1e9)](String, g));
+            }
+        }
+        return m;
+    }
+
+    function L(Z, H) {
+        var O = e, m = D['qtNQi'][O(0x1c3)]('|'), S = 0x0;
+        while (!![]) {
+            switch (m[S++]) {
+                case'0':
+                    return Z['v'] = J && D[O(0x26e)](parse, J), 0x3e8 !== Z[O(0x217)] ? new UserManger_1['User'](Z) : new UserManger_1[(O(0x1fa))](Z);
+                case'1':
+                    Z[O(0x1d4)] = B && D[O(0x1dd)](parse, B);
+                    continue;
+                case'2':
+                    var B = (0x0, decrypt_1['default'])(H, X, Z['board_v']);
+                    continue;
+                case'3':
+                    var J = (0x0, decrypt_1[O(0x25f)])(H, X, Z['v']);
+                    continue;
+                case'4':
+                    for (var g, X = D[O(0x258)](null, g = Z['enc']) && D[O(0x258)](void 0x0, g) ? g : 0x1e, f = 0x0, F = [D['ZwrSb'], D[O(0x216)], O(0x225), 'profile_image_url', O(0x218)]; D['NsuuE'](f, F[O(0x271)]); f++) {
+                        var k = F[f];
+                        if (D[O(0x235)]('', Z[k])) {
+                            var M = Z[k];
+                            Z[k] = (0x0, decrypt_1[O(0x25f)])(H, X, M);
+                        }
+                    }
+                    continue;
+            }
+            break;
+        }
+    }
+
+    function y(Z, H, m) {
+        return D['ROYCY'](void 0x0, m) && (m = ''), D['ynqJh'](L, l(Z, m), H);
+    }
+
+    function x(Z, H) {
+        var V = e;
+        D[V(0x19e)](void 0x0, H) && (H = '');
+        for (var m = {}, S = Z[V(0x272)](), B = 0x0; D[V(0x237)](B, S[V(0x271)]); B++) {
+            var J = D[V(0x290)](String, S[B])[V(0x206)](H, ''), g = Z[V(0x236)](B);
+            switch (J) {
+                case D[V(0x251)]:
+                case'id':
+                case V(0x28d):
+                case D[V(0x226)]:
+                case D[V(0x234)]:
+                case D['gAbQg']:
+                case D['Pwrok']:
+                case D[V(0x1e7)]:
+                    m[J] = D[V(0x1e9)](String, g);
+                    break;
+                case D['yIThQ']:
+                case D[V(0x264)]:
+                    m[J] = Number(g);
+                    break;
+                case'v':
+                    m[J] = D[V(0x294)](parse, D[V(0x294)](String, g));
+                    break;
+                default:
+                    CHAT_COLUMN_ARRAY[V(0x248)](J) && (m[J] = g && D[V(0x1dd)](String, g));
+            }
+        }
+        return m;
+    }
+
+    function P(Z) {
+        var Q = e, H, m, S, B = Z[Q(0x1eb)],
+            J = D[Q(0x274)](null, m = D['hJQli'](null, H = D['DceXE'](null, Z) ? void 0x0 : Z['v']) || D['ROYCY'](void 0x0, H) ? void 0x0 : H[Q(0x27c)]) && void 0x0 !== m ? m : 0x1e,
+            g = (0x0, decrypt_1[Q(0x25f)])(B, J, Z['attachment']), X = (0x0, decrypt_1[Q(0x25f)])(B, J, Z[Q(0x257)]);
+        switch (Z[Q(0x266)] = D[Q(0x249)](null, S = g) || D[Q(0x25c)]('', S) ? g : D[Q(0x294)](parse, g), Z[Q(0x257)] = X, 0xffffbfff & Z[Q(0x217)]) {
+            case 0x0:
+                return Z[Q(0x257)] = D[Q(0x290)](parse, Z['message']), D[Q(0x22b)](0x1, Z['message'][Q(0x1aa)]) ? new ChatClass_1[(Q(0x1de))](Z) : D['WXYnz'](0x2, Z[Q(0x257)][Q(0x1aa)]) ? new ChatClass_1[(Q(0x27b))](Z) : D[Q(0x1ac)](0x4, Z['message']['feedType']) ? new ChatClass_1['OpenChatJoinedFeed'](Z) : D['KtUyT'](0x6, Z[Q(0x257)][Q(0x1aa)]) ? new ChatClass_1[(Q(0x21c))](Z) : D[Q(0x1b2)](0xb, Z[Q(0x257)][Q(0x1aa)]) ? new ChatClass_1[(Q(0x1e8))](Z) : D[Q(0x25c)](0xc, Z[Q(0x257)]['feedType']) ? new ChatClass_1[(Q(0x26a))](Z) : D[Q(0x19e)](0xe, Z[Q(0x257)][Q(0x1aa)]) ? new ChatClass_1['DeleteFeed'](Z) : D[Q(0x22b)](0xf, Z[Q(0x257)][Q(0x1aa)]) ? new ChatClass_1[(Q(0x241))](Z) : new ChatClass_1[(Q(0x1bf))](Z);
+            case 0x1:
+                return new ChatClass_1[(Q(0x299))](Z);
+            case 0x2:
+                return new ChatClass_1[(Q(0x222))](Z);
+            case 0x3:
+                return new ChatClass_1[(Q(0x20a))](Z);
+            case 0x5:
+                return new ChatClass_1[(Q(0x21a))](Z);
+            case 0x6:
+                return new ChatClass_1[(Q(0x1e2))](Z);
+            case 0xc:
+            case 0x14:
+            case 0x19:
+                return new ChatClass_1[(Q(0x1ec))](Z);
+            case 0x10:
+                return new ChatClass_1[(Q(0x28c))](Z);
+            case 0x12:
+                return new ChatClass_1['FileChat'](Z);
+            case 0x1a:
+                return new ChatClass_1[(Q(0x1e4))](Z);
+            case 0x1b:
+                return new ChatClass_1[(Q(0x1ff))](Z);
+            default:
+                return new ChatClass_1[(Q(0x247))](Z);
+        }
+    }
+
+    function u(Z, H) {
+        var I0 = e;
+        return D[I0(0x1b2)](void 0x0, H) && (H = ''), D[I0(0x1dd)](P, D['jvsat'](x, Z, H));
+    }
+
+    h[e(0x204)] = l, h[e(0x286)] = L, h[e(0x21e)] = y, h[e(0x287)] = function (Z, H) {
+        var I1 = e, m = D[I1(0x25a)](u, Z), S = D[I1(0x1e6)](y, Z, H, 'u_');
+        return m['user'] = S, m;
+    }, h[e(0x208)] = x, h[e(0x276)] = P, h[e(0x1f1)] = u, h[e(0x213)] = function (Z, H) {
+        var I2 = e, m = {};
+        Z[I2(0x272)]()[I2(0x1fb)](function (B, J) {
+            var I3 = I2;
+            B = D['CHzkw'](String, B);
+            var g = Z[I3(0x236)](J);
+            switch (B) {
+                case D[I3(0x251)]:
+                case'id':
+                case D[I3(0x1b0)]:
+                case I3(0x20c):
+                case D[I3(0x25d)]:
+                case D[I3(0x28b)]:
+                case D[I3(0x205)]:
+                case D[I3(0x202)]:
+                case D[I3(0x27d)]:
+                case D[I3(0x265)]:
+                case D[I3(0x207)]:
+                    m[B] = g ? D[I3(0x1a1)](String, g) : null;
+                    break;
+                case D[I3(0x1db)]:
+                case D[I3(0x293)]:
+                case D['hHVuB']:
+                    m[B] = g ? Number(g) : null;
+                    break;
+                case D['mFFqm']:
+                    m[B] = g ? Boolean(D[I3(0x25a)](Number, g)) : null;
+                    break;
+                case'temporary_message':
+                case'v':
+                case D[I3(0x1d0)]:
+                case D[I3(0x23e)]:
+                case D[I3(0x1ad)]:
+                case D[I3(0x1cf)]:
+                case I3(0x1cd):
+                case I3(0x1c5):
+                case D[I3(0x232)]:
+                case D[I3(0x1a7)]:
+                case D['OMtYW']:
+                case D[I3(0x296)]:
+                case D['BStqR']:
+                    m[B] = g && D[I3(0x1fe)](parse, D[I3(0x1dd)](String, g));
+                    break;
+                default:
+                    m[B] = g && D['gGphd'](String, g);
+            }
+        });
+        var S = m['v'][I2(0x27c)];
+        return m[I2(0x1c9)] = (0x0, decrypt_1['default'])(H, S, m[I2(0x1c9)]), [D[I2(0x1ce)], I2(0x212)]['includes'](m[I2(0x217)]) ? new RoomManger_1[(I2(0x25b))](m) : new RoomManger_1[(I2(0x1a0))](m);
+    };
+}(CursorManager || (CursorManager = {}));
