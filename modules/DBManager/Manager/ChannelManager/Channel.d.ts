@@ -1,37 +1,34 @@
+import type { OpenChannelType, ChannelCommon, OpenLinkType } from "../../types";
+import { ChannelType } from "../../types";
 export declare class Channel {
+    protected _roomInfo: ChannelCommon;
     protected _id: string;
     protected _name: string;
-    protected _replyAction: any;
-    protected _readAction: any;
-    constructor(_id: string, _name: string, _replyAction: any, _readAction: any);
-    /**
-     * 방 고유 아이디
-     */
-    get id(): string;
-    get raw(): {
-        id: string;
-        name: string;
-    };
+    constructor(obj: ChannelCommon);
     get members(): import("..").User[] | null;
-    /**
-     * 방 이름
-     */
-    get name(): string;
-    /**
-     * 채팅방에 메시지를 발송합니다
-     * @param message 발송하려는 메시지
-     * @return {boolean}
-     */
-    send(message: string): boolean;
-    /**
-     * 채팅방을 읽기처리 합니다
-     * @return {boolean}
-     */
-    read(): boolean;
+    isOpenChannel(): this is OpenChannel;
+    get raw(): ChannelType<"DirectChat" | "MultiChat">;
     toJSON(): {
-        name: string;
-        id: string;
+        "channel": ChannelCommon;
+        "openLinkInfo": null | OpenLinkType;
     };
-    protected _isAPI2(): boolean;
-    protected _getContext(): android.content.Context;
+    set name(name: string);
+    send(message: string): boolean;
+    isGroupChat(): boolean;
+    read(): boolean | undefined;
+    get id(): string;
+    get name(): string;
+}
+export declare class OpenChannel extends Channel {
+    private _open_link;
+    get host(): import("..").User | null;
+    constructor(obj: ChannelCommon);
+    get raw(): OpenChannelType<"OM" | "OD">;
+    set openChatInfo(openLink: OpenLinkType);
+    get openChatInfo(): OpenLinkType;
+    isOpenChannel(): this is OpenChannel;
+    toJSON(): {
+        "channel": ChannelCommon;
+        "openLinkInfo": OpenLinkType;
+    };
 }

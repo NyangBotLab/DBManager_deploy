@@ -1,8 +1,10 @@
 import type { ChatType } from "../../../../types";
 import type { AudioChat, EmoticonChat, FeedChat, FileChat, MapChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, VideoChat } from "./index";
 import type { User } from "../../../UserManger";
+import type { Channel } from "../../../ChannelManager";
 export declare class Chat {
-    protected _user: User | null;
+    protected _channel: Channel | null;
+    protected _user: User;
     protected _chatData: ChatType;
     protected _isHidden: boolean;
     protected _type: number;
@@ -12,7 +14,9 @@ export declare class Chat {
      * 원본타입을 가져옵니다 (삭제된거 상관 없이)
      */
     get originType(): number;
-    set user(user: User | null);
+    set channel(channel: Channel | null);
+    get channel(): Channel | null;
+    set user(user: User);
     /**
      * 현재 채팅내용
      */
@@ -24,14 +28,15 @@ export declare class Chat {
     /**
      * 유저 정보
      */
-    get user(): User | null;
+    get user(): User;
     /**
      * 전체 내용을 가져옵니다
      */
     get raw(): ChatType;
     toJSON(): {
         chat: ChatType;
-        user: User | null;
+        user: User;
+        channelInfo: Channel | null;
     };
     /**
      * 보낸 시각을 가져옵니다

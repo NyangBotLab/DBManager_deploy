@@ -69,7 +69,7 @@ export declare class OpenChatKickedFeed extends FeedChat {
     /**
      * 강퇴한 사람의 유저정보를 가져옵니다
      */
-    get kickedBy(): User | null;
+    get kickedBy(): User;
     isOpenChat(): this is OpenChatKickedFeed;
 }
 export declare class MemberTypeChangedFeed extends FeedChat {
