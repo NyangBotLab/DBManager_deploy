@@ -7,6 +7,7 @@ export declare class Channel {
     constructor(obj: ChannelCommon);
     get members(): import("..").User[] | null;
     isOpenChannel(): this is OpenChannel;
+    isOpenChat(): this is OpenChannel;
     get raw(): ChannelType<"DirectChat" | "MultiChat">;
     toJSON(): {
         "channel": ChannelCommon;
@@ -27,6 +28,7 @@ export declare class OpenChannel extends Channel {
     set openChatInfo(openLink: OpenLinkType);
     get openChatInfo(): OpenLinkType;
     isOpenChannel(): this is OpenChannel;
+    isOpenChat(): this is OpenChannel;
     toJSON(): {
         "channel": ChannelCommon;
         "openLinkInfo": OpenLinkType;
