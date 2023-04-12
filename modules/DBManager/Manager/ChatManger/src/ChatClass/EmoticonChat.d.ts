@@ -2,6 +2,7 @@ import { Chat } from "./Chat";
 import type { User } from "../../../UserManger";
 import type { EmoticonChatType, MentionListAttach } from "../../../../types";
 export declare class EmoticonChat extends Chat {
+    private _mentions;
     constructor(obj: EmoticonChatType);
     /**
      * 이모티콘을 가져옵니다

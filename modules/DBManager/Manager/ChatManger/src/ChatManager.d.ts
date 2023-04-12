@@ -11,7 +11,8 @@ export declare class ChatManager {
      * @deprecated
      */
     static getAlreadyInstance(): ChatManager;
-    getChatByLogID(logId: string): Chat | null;
+    getALLByLogID(logId: string): Chat | null;
+    getChatUserByLogID(logId: string): Chat | null;
     private getPrevChatID;
     private getNextChatID;
     getPrevChatByID(logId: string, count?: number): Chat | null;
@@ -20,6 +21,7 @@ export declare class ChatManager {
     getLastID(): string | undefined;
     getOneUserByID(id: string): User | null;
     getMultipleUsersByIDs(ids: string[], makeGroup?: boolean): {};
+    private _getMinIdsToUsers;
     getMembersByRoomID(id: string): User[] | null;
     rawQuery(query: string, values: any[]): null | Record<string, any>[];
 }

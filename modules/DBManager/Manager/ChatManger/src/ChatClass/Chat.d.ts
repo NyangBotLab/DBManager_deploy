@@ -8,7 +8,6 @@ export declare class Chat {
     protected _chatData: ChatType;
     protected _isHidden: boolean;
     protected _type: number;
-    protected _messageType: number;
     constructor(chatData: ChatType);
     /**
      * 원본타입을 가져옵니다 (삭제된거 상관 없이)

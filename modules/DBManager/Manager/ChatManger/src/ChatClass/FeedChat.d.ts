@@ -116,11 +116,10 @@ export declare class HandOverFeed extends MemberTypeChangedFeed {
     isHandover(): this is HandOverFeed;
 }
 export declare class DeleteFeed extends FeedChat {
-    protected _originChat: Chat | null;
+    protected _originChat: Chat;
     constructor(props: ChatType);
-    set deletedChatUser(user: User | null);
     /**
      * 지운 챗 원본을 가져옵니다
      */
-    get deletedChat(): Chat | null;
+    get deletedChat(): Chat;
 }
