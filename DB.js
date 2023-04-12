@@ -6,12 +6,7 @@ const ALLSEE = "\u200b".repeat(500);
  * 메시지를 수신 할 때
  */
 DBListener.on("message", (chat, channel) => {
-    /**
-     * 한번도 수신되지 않은 채널이면 null
-     */
-    if (channel === null) {
-        return;
-    }
+
     /**
      * 채팅 유저정보
      */
