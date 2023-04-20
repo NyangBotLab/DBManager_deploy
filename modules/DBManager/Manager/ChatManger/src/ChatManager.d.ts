@@ -23,6 +23,7 @@ export declare class ChatManager {
     getLastID(): string | undefined;
     getOneUserByID(id: string): User | null;
     getMultipleUsersByIDs(ids: string[], makeGroup?: boolean): {};
+    getDisplayName(ids: string[]): string;
     private _getMinIdsToUsers;
     getMembersByRoomID(id: string): User[] | null;
     rawQuery(query: string, values: any[]): null | Record<string, any>[];

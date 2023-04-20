@@ -4,6 +4,7 @@ import type { User } from "../UserManger";
 export declare class Channel {
     protected _roomInfo: ChannelCommon;
     protected _id: string;
+    protected _host: User | null;
     protected _name: string;
     protected _members: User[];
     protected _lastChat: Chat;
@@ -24,6 +25,7 @@ export declare class Channel {
     read(): boolean | undefined;
     get id(): string;
     get name(): string;
+    get host(): User | null;
     isMultiChat(): this is MultiChannel;
     isMultiChannel(): this is MultiChannel;
     isDirectChat(): this is DirectChannel;

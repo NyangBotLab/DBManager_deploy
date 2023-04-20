@@ -193,6 +193,10 @@ npm run compile katalkbot DB
 
 # 패치노트
 
+## 1.4.1
+1. 팀 채팅방에서 host를 구하는 기능 추가 (일반 방이면 null)
+2. 방을 개설 할 때 방 이름을 정하지 않을 방을 호출 할 때 오류 뱉는 현상 수정
+
 ## 1.4.0 
 1. 팀 채팅방에서 강퇴당하는 것도 leave로 처리하도록 변경
 2. chat.readMembers, chat.unreadMembers 추가(갱신은 직접 채팅방 들어가야함)
