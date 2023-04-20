@@ -115,15 +115,21 @@ DBListener.on("join", (chat, channel) => {
 ****
 ## leave : (chat : LeaveFeed, channel : Channel) => void
 누군가 단체방(오픈챗 포함)을 나갈 때 반응합니다
+팀챗에서 강퇴당해도 leave로 전달해줍니다
 ```javascript
 DBListener.on("leave", (chat, channel) => {
-    channel.send(chat.leaveUser.nickName + "님 잘가요");
+    if(chat.isKicked()){
+        channel.send(chat.leaveUser.nickName + "님이 강퇴당했어요");
+    }
+    else{
+        channel.send(chat.leaveUser.nickName + "님 잘가요");
+    }
 });
 ```
 
 ****
 ## kick : (chat : LeaveFeed|OpenChatKickedFeed, channel : Channel) => void
-누군가 강퇴당하면 반응합니다
+누군가 오픈채팅방에서 강퇴당하면 반응합니다
 ```javascript
 DBListener.on("kick", (chat, channel) => {
     channel.send(chat.kickedBy.name + "님이 " + chat.kickedUser.nickName + "님을 강퇴했습니다")
@@ -184,6 +190,16 @@ DBListener.on("member_type_change", (chat, channel) => {
 npm run compile katalkbot DB
 # 봇저장소가 katalkbot 봇이름은 DB
 ```
+
+# 패치노트
+
+## 1.4.0 
+1. 팀 채팅방에서 강퇴당하는 것도 leave로 처리하도록 변경
+2. chat.readMembers, chat.unreadMembers 추가(갱신은 직접 채팅방 들어가야함)
+3. 그 외 내부적인 구조 변경
+
+## 1.3.0
+1. 채널 관련 메소드 추가
 
 # 제작자 및 도움 주신 분
 ### https://github.com/saroro1 (사로로 본인)

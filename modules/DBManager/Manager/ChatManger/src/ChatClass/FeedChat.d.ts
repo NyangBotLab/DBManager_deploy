@@ -1,6 +1,5 @@
 import { Chat } from "./Chat";
 import type { ChatType, FeedAttach, FeedUser } from "../../../../types";
-import type { User } from "../../../UserManger";
 export declare class FeedChat extends Chat {
     /**
      * 피드타입
@@ -41,7 +40,13 @@ export declare class OpenChatJoinedFeed extends FeedChat {
      */
     isOpenChat(): this is OpenChatJoinedFeed;
 }
-export declare class LeaveFeed extends FeedChat {
+export declare abstract class KickedFeed extends FeedChat {
+    /**
+     * 오픈챗 여부
+     */
+    isOpenChat(): this is OpenChatKickedFeed;
+}
+export declare class LeaveFeed extends KickedFeed {
     constructor(props: ChatType);
     /**
      * 나간 사람을 가져옵니다
@@ -55,12 +60,8 @@ export declare class LeaveFeed extends FeedChat {
      * 강퇴당한 여부(팀채팅)
      */
     isKicked(): boolean | undefined;
-    /**
-     * 오픈챗 여부
-     */
-    isOpenChat(): boolean;
 }
-export declare class OpenChatKickedFeed extends FeedChat {
+export declare class OpenChatKickedFeed extends KickedFeed {
     constructor(props: ChatType);
     /**
      * 강퇴당한 사람을 얻어옵니다
@@ -69,7 +70,7 @@ export declare class OpenChatKickedFeed extends FeedChat {
     /**
      * 강퇴한 사람의 유저정보를 가져옵니다
      */
-    get kickedBy(): User;
+    get kickedBy(): import("../../..").User;
     isOpenChat(): this is OpenChatKickedFeed;
 }
 export declare class MemberTypeChangedFeed extends FeedChat {

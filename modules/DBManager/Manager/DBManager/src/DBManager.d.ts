@@ -1,6 +1,6 @@
 import type TypedEventEmitter from 'typed-emitter';
-import type { Chat, DeleteFeed, InviteFeed, LeaveFeed, OpenChatJoinedFeed, OpenChatKickedFeed } from "../../ChatManger";
-import { ChatManager, MemberTypeChangedFeed } from "../../ChatManger";
+import type { Chat, DeleteFeed, InviteFeed, KickedFeed, LeaveFeed, MemberTypeChangedFeed, OpenChatJoinedFeed } from "../../ChatManger";
+import { ChatManager } from "../../ChatManger";
 import { ChannelSessionManager } from "../../ChannelSessionManager";
 import type { Channel } from "../../ChannelManager";
 declare const DBManager_base: new () => TypedEventEmitter<MessageEvents>;
@@ -32,7 +32,7 @@ type MessageEvents = {
     "leave": (chat: LeaveFeed, channel: Channel) => void;
     "join": (chat: OpenChatJoinedFeed, channel: Channel) => void;
     "invite": (chat: InviteFeed, channel: Channel) => void;
-    "kick": (chat: OpenChatKickedFeed | LeaveFeed, channel: Channel) => void;
+    "kick": (chat: KickedFeed, channel: Channel) => void;
     "member_type_change": (chat: MemberTypeChangedFeed, channel: Channel) => void;
 };
 export {};

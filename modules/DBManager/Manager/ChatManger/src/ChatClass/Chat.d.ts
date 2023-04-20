@@ -16,6 +16,8 @@ export declare class Chat {
     set channel(channel: Channel | null);
     get channel(): Channel | null;
     set user(user: User);
+    get unreadMembers(): User[];
+    get readMembers(): User[];
     /**
      * 현재 채팅내용
      */

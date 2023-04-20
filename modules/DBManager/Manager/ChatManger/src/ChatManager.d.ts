@@ -14,6 +14,8 @@ export declare class ChatManager {
     getALLByLogID(logId: string): Chat | null;
     getChatUserByLogID(logId: string): Chat | null;
     private getPrevChatID;
+    getUnreadMember(channelID: string, chat_log_ids: string): User[];
+    getReadMember(channelID: string, chat_log_ids: string): User[];
     private getNextChatID;
     getPrevChatByID(logId: string, count?: number): Chat | null;
     getNextChatByID(logId: string, count?: number): Chat | null;

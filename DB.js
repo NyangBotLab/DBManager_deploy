@@ -16,7 +16,7 @@ DBListener.on("message", (chat, channel) => {
      * /ㅎㅇ라고 말하면 보낸사람 + 님 안녕하세요
      */
     if (chat.text === "/ㅎㅇ") {
-        channel.send(chat.user.name + "님 안녕하세요")
+        channel.send(user.name + "님 안녕하세요")
     }
 
     /**
@@ -71,7 +71,13 @@ DBListener.on("invite", (chat, channel) => {
  */
 
 DBListener.on("leave", (chat, channel) => {
-    channel.send(chat.leaveUser.nickName + "님 잘가요");
+    if(chat.isKicked()){
+        channel.send(chat.leaveUser.nickName + "님이 강퇴당했어요");
+    }
+    else{
+        channel.send(chat.leaveUser.nickName + "님 잘가요");
+    }
+
 });
 /**
  * 톡방에서 강퇴 당할 때
