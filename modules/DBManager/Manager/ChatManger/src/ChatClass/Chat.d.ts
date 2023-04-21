@@ -33,9 +33,9 @@ export declare class Chat {
     /**
      * 전체 내용을 가져옵니다
      */
-    get raw(): ChatType;
+    get raw(): ChatType<any>;
     toJSON(): {
-        chat: ChatType;
+        chat: ChatType<any>;
         user: User;
         channelInfo: Channel | null;
     };

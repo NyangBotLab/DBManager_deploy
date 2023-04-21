@@ -13,12 +13,10 @@ export declare class ChatManager {
     static getAlreadyInstance(): ChatManager;
     getALLByLogID(logId: string): Chat | null;
     getChatUserByLogID(logId: string): Chat | null;
-    private getPrevChatID;
     getUnreadMember(channelID: string, chat_log_ids: string): User[];
     getReadMember(channelID: string, chat_log_ids: string): User[];
-    private getNextChatID;
-    getPrevChatByID(logId: string, count?: number): Chat | null;
-    getNextChatByID(logId: string, count?: number): Chat | null;
+    getPrevChat(chat: Chat, count?: number): Chat | null;
+    getNextChat(chat: Chat, count?: number): Chat | null;
     getChatStack(from?: string | undefined, to?: string | undefined): Chat[];
     getLastID(): string | undefined;
     getOneUserByID(id: string): User | null;

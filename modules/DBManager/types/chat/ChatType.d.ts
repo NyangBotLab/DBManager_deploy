@@ -10,47 +10,25 @@ export interface VFields {
     isMine: boolean;
     enc: number;
 }
-export interface ChatType {
+export interface ChatType<T = any> {
     id: NUMSTRING;
     _id: NUMSTRING;
     type: number;
     chat_id: string;
     user_id: string;
     message: string | FeedAttach;
-    attachment: any;
+    attachment: T;
     created_at: string;
     prev_id: string;
     v: VFields | null;
 }
-type ChatExtends = Omit<ChatType, "attachment">;
-export interface NormalChatType extends ChatExtends {
-    attachment: MentionListAttach | null | "";
-}
-export interface PhotoChatType extends ChatExtends {
-    attachment: PhotoAttach;
-}
-export interface MultiPhotoChatType extends ChatExtends {
-    attachment: MultiPhotoAttach;
-}
-export interface EmoticonChatType extends ChatExtends {
-    attachment: (BigEmoticonAttach | MobileEmoticonAttach | PCEmoticonAttach) & MentionListAttach;
-}
-export interface OldEmoticonChatType extends ChatExtends {
-    attachment: OldEmoticonAttach;
-}
-export interface ReplyChatType extends ChatExtends {
-    attachment: ReplyAttach & MentionListAttach;
-}
-export interface FileChatType extends ChatExtends {
-    attachment: FileAttach;
-}
-export interface VideoChatType extends ChatExtends {
-    attachment: VideoAttach;
-}
-export interface AudioChatType extends ChatExtends {
-    attachment: AudioAttach;
-}
-export interface MapChatType extends ChatExtends {
-    attachment: MapAttach;
-}
-export {};
+export type NormalChatType = ChatType<MentionListAttach | null | "">;
+export type PhotoChatType = ChatType<PhotoAttach>;
+export type MultiPhotoChatType = ChatType<MultiPhotoAttach>;
+export type EmoticonChatType = ChatType<(BigEmoticonAttach | MobileEmoticonAttach | PCEmoticonAttach) & MentionListAttach>;
+export type OldEmoticonChatType = ChatType<OldEmoticonAttach>;
+export type ReplyChatType = ChatType<ReplyAttach & MentionListAttach>;
+export type FileChatType = ChatType<FileAttach>;
+export type VideoChatType = ChatType<VideoAttach>;
+export type AudioChatType = ChatType<AudioAttach>;
+export type MapChatType = ChatType<MapAttach>;
