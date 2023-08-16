@@ -1,0 +1,16 @@
+export declare const CHAT_COLUMN = "id,_id,type,chat_id,user_id,message,attachment,created_at,prev_id,v";
+export declare const CHAT_COLUMN_ARRAY: string[];
+export declare const CHAT_COLUMN_PREFIX: string;
+export declare const USER_COLUMN = "id,_id,type,name,profile_image_url,full_profile_image_url,original_profile_image_url,status_message,blocked,v,board_v,user_type,account_id,member_type,enc,created_at";
+export declare const USER_COLUMN_ARRAY: string[];
+export declare const USER_COLUMN_PREFIX: string;
+export declare const ROOM_COLUMN = "id,_id,type,last_log_id,last_message,last_updated_at,unread_count,v,is_hint,active_members_count,meta,link_id,last_joined_log_id";
+export declare const ROOM_COLUMN_ARRAY: string[];
+export declare const ROOM_COLUMN_PREFIX: string;
+export declare const OPEN_LINK_COLUMN = "id,user_id,name,url,image_url,type,active,expired,created_at,v,description";
+export declare const OPEN_LINK_COLUMN_ARRAY: string[];
+export declare const OPEN_COLUM_PREFIX: string;
+export declare const ALL_COLUMN: string;
+export declare const ALL_JOIN_COLUMN = " FROM chat_logs LEFT JOIN DB2.friends ON c_user_id = u_id INNER JOIN chat_rooms ON c_chat_id = r_id LEFT JOIN DB2.open_link ON   r_link_id = o_id";
+export declare const CHAT_USER_COLUMN: string;
+export declare const CHAT_USER_JOIN_COLUMN = " FROM chat_logs LEFT JOIN DB2.friends ON c_user_id = u_id";

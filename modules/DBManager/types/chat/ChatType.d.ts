@@ -1,4 +1,4 @@
-import type { AudioAttach, BigEmoticonAttach, FileAttach, MapAttach, MentionListAttach, MobileEmoticonAttach, MultiPhotoAttach, OldEmoticonAttach, PCEmoticonAttach, PhotoAttach, ReplyAttach, VideoAttach } from "../attachment";
+import type { AudioAttach, BigEmoticonAttach, FileAttach, MapAttach, MentionListAttach, MobileEmoticonAttach, MultiPhotoAttach, OldEmoticonAttach, PCEmoticonAttach, PhotoAttach, ProfileAttach, ReplyAttach, VideoAttach } from "../attachment";
 import type { FeedAttach } from "../message";
 export type NUMSTRING = string;
 export interface VFields {
@@ -25,10 +25,11 @@ export interface ChatType<T = any> {
 export type NormalChatType = ChatType<MentionListAttach | null | "">;
 export type PhotoChatType = ChatType<PhotoAttach>;
 export type MultiPhotoChatType = ChatType<MultiPhotoAttach>;
-export type EmoticonChatType = ChatType<(BigEmoticonAttach | MobileEmoticonAttach | PCEmoticonAttach) & MentionListAttach>;
+export type EmoticonChatType = ChatType<(BigEmoticonAttach | MobileEmoticonAttach | PCEmoticonAttach)>;
 export type OldEmoticonChatType = ChatType<OldEmoticonAttach>;
-export type ReplyChatType = ChatType<ReplyAttach & MentionListAttach>;
+export type ReplyChatType = ChatType<ReplyAttach & ((BigEmoticonAttach | MobileEmoticonAttach | PCEmoticonAttach))>;
 export type FileChatType = ChatType<FileAttach>;
 export type VideoChatType = ChatType<VideoAttach>;
 export type AudioChatType = ChatType<AudioAttach>;
 export type MapChatType = ChatType<MapAttach>;
+export type ProfileChatType = ChatType<ProfileAttach>;

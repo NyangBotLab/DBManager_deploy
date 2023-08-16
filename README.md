@@ -107,7 +107,7 @@ DBListener.on("join", (chat, channel) => {
 ## invite : (chat : InviteFeed, channel : Channel) => void
 누군가 단체방에서 초대하면 반응합니다
 ```javascript
-DBListener.on("join", (chat, channel) => {
+DBListener.on("invite", (chat, channel) => {
     channel.send(chat.inviteUser.nickName+"님이"+ chat.invitedUsers.map((e)=>e.nickName).join(",")+"님을 초대했습니다")
 })
 ```
@@ -192,6 +192,12 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+
+
+
+## 1.5
+1. channel.read 메소드가 api2에서 오류일으키는 버그 수정
+2. DB.getInstance에서 userId부분을 null 또는 ""를 붙이면 알아서 유저 아이디를 불러 올 수 있도록 수정
 
 ## 1.4.2
 1. getPrevChat getNextChat 속도 개선(이제 1000을 부르든 4을 부르든 속도 비슷해요

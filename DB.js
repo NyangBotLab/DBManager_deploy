@@ -1,7 +1,9 @@
 const DB = require('./modules/DBManager').DBManager;
 
-var DBListener = DB.getInstance("YOUR_PACKAGE_NAME", 'YOUR_USER_ID', false /*get RootPermission*/);
-const ALLSEE = "\u200b".repeat(500);
+var DBListener = DB.getInstance("YOUR_PACKAGE_NAME", null, false /*get RootPermission*/);
+
+//아이디를 모르면 userKey부분을 null 또는 ""로 넘기면 오픈프로필을 통해서 userId를 구합니다
+
 /**
  * 메시지를 수신 할 때
  */

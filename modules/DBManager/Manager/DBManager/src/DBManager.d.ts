@@ -14,10 +14,18 @@ export declare class DBManager extends DBManager_base {
     private obs;
     private _lastID?;
     private constructor();
-    static getInstance(packageName: string, userKey: string, getRoot?: boolean): DBManager;
+    static getInstance(packageName: string, userKey: string | null, getRoot?: boolean): DBManager;
     requestPermission(): void;
+    /**
+     *  @deprecated
+     */
     getChatManager(): ChatManager;
+    /**
+     *  @deprecated
+     */
     getChannelManager(): typeof ChannelSessionManager;
+    get lastID(): string | undefined;
+    rawQuery(query: string, value: any[]): Record<string, any>[] | null;
     addChannel(sbn: any): void;
     onEvent(event: number, path: string): void;
     start(): boolean;

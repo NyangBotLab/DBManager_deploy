@@ -16,14 +16,14 @@ export interface MentionsAttach {
 export interface MentionListAttach {
     mentions: MentionsAttach[];
 }
-export interface ReplyAttach {
+export interface ReplyAttach extends MentionListAttach {
     src_linkId: number;
     src_logId: string;
     src_message: string;
     src_type: number;
     src_userId: number;
 }
-export interface FileAttach {
+export interface FileAttach extends MentionListAttach {
     cs: string;
     expire: number;
     k: string;
@@ -32,7 +32,7 @@ export interface FileAttach {
     size: number;
     url: string;
 }
-export interface PhotoAttach {
+export interface PhotoAttach extends MentionListAttach {
     cs: string;
     h: number;
     k: string;
@@ -44,7 +44,7 @@ export interface PhotoAttach {
     url: string;
     w: number;
 }
-export interface MultiPhotoAttach {
+export interface MultiPhotoAttach extends MentionListAttach {
     csl: string[];
     hl: number[];
     imageUrls: string[];
@@ -56,7 +56,7 @@ export interface MultiPhotoAttach {
     thumbnailWidths: number[];
     wl: number[];
 }
-export interface EmoticonAttach {
+export interface EmoticonAttach extends MentionListAttach {
     alt: string;
     name: string;
     path: string;
@@ -78,7 +78,7 @@ export interface PCEmoticonAttach extends EmoticonAttach {
 export interface MobileEmoticonAttach extends EmoticonAttach {
     s: string;
 }
-export interface OldEmoticonAttach {
+export interface OldEmoticonAttach extends MentionListAttach {
     mentions: MentionsAttach[];
     alt: string;
     name: string;
@@ -87,7 +87,7 @@ export interface OldEmoticonAttach {
     thumbnailWidth: number;
     url: string;
 }
-export interface VideoAttach {
+export interface VideoAttach extends MentionListAttach {
     url: string;
     tk: string;
     cs: string;
@@ -103,17 +103,23 @@ export interface VideoAttach {
     wh: number;
     hh: number;
 }
-export interface AudioAttach {
+export interface AudioAttach extends MentionListAttach {
     "url": string;
     "d": number;
     "s": number;
     "k": string;
     "expire": number;
 }
-export interface MapAttach {
+export interface MapAttach extends MentionListAttach {
     lat: number;
     lng: number;
     a: string;
     t: string;
     c: boolean;
+}
+export interface ProfileAttach extends MentionListAttach {
+    accountId: string;
+    userid: string;
+    nickName: string;
+    userType: number;
 }
