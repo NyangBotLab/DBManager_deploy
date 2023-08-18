@@ -192,7 +192,8 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
-
+## 1.5.1
+1. ChatManager가 init 안되는 현상 수정 (𝐂𝐇𝐎𝐂𝐎𝐂𝐇𝐈𝐏 님 제보)
 
 
 ## 1.5
