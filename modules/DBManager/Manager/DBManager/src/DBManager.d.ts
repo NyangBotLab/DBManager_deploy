@@ -1,6 +1,6 @@
 import type TypedEventEmitter from 'typed-emitter';
-import type { Chat, DeleteFeed, InviteFeed, KickedFeed, LeaveFeed, MemberTypeChangedFeed, OpenChatJoinedFeed } from "../../ChatManger";
-import { ChatManager } from "../../ChatManger";
+import type { Chat, DeleteFeed, InviteFeed, KickedFeed, LeaveFeed, MemberTypeChangedFeed, OpenChatJoinedFeed } from "../../ChatManager";
+import { ChatManager } from "../../ChatManager";
 import { ChannelSessionManager } from "../../ChannelSessionManager";
 import type { Channel } from "../../ChannelManager";
 declare const DBManager_base: new () => TypedEventEmitter<MessageEvents>;
@@ -18,13 +18,19 @@ export declare class DBManager extends DBManager_base {
     requestPermission(): void;
     /**
      *  @deprecated
+     *  v2에서 제거 예정
      */
     getChatManager(): ChatManager;
     /**
      *  @deprecated
+     *  v2에서 제거 예정
      */
     getChannelManager(): typeof ChannelSessionManager;
     get lastID(): string | undefined;
+    /**
+     * @deprecated
+     * v2에서 static으로 변경 예정
+     */
     rawQuery(query: string, value: any[]): Record<string, any>[] | null;
     addChannel(sbn: any): void;
     onEvent(event: number, path: string): void;
@@ -33,7 +39,7 @@ export declare class DBManager extends DBManager_base {
     close(): void;
     setWakeLock(setWakeLock: boolean): void;
 }
-type MessageEvents = {
+export type MessageEvents = {
     "message": (chat: Chat, channel: Channel) => void;
     "delete": (chat: DeleteFeed, channel: Channel) => void;
     "hide": (chat: Chat, channel: Channel) => void;

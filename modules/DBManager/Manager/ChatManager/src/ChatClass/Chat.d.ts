@@ -1,6 +1,6 @@
 import type { ChatType } from "../../../../types";
 import type { AudioChat, EmoticonChat, FeedChat, FileChat, MapChat, MultiPhotoChat, NormalChat, OldEmoticonChat, PhotoChat, ReplyChat, VideoChat, ProfileChat } from "./index";
-import type { User } from "../../../UserManger";
+import type { User } from "../../../UserManager";
 import type { Channel } from "../../../ChannelManager";
 export declare class Chat {
     private _mentions;

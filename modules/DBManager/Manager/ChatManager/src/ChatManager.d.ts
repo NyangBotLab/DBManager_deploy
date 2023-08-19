@@ -1,5 +1,5 @@
 import { Chat } from "./ChatClass";
-import { User } from "../../UserManger";
+import { User } from "../../UserManager";
 export declare class ChatManager {
     private db;
     private userKey;

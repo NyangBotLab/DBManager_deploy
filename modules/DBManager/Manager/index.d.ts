@@ -1,4 +1,4 @@
 export * from "./ChannelSessionManager";
-export * from "./ChatManger";
+export * from "./ChatManager";
 export * from "./DBManager";
-export * from "./UserManger";
+export * from "./UserManager";
