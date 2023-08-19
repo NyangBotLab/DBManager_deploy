@@ -197,6 +197,11 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+
+## 1.6.1
+1. wakeLock 버그 수정
+
+
 ## 1.6.0
 1. deprecated 된 것들 추가
 2. typedoc 추가
