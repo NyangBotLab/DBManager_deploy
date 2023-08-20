@@ -2,3 +2,4 @@
 /.idea
 /dist
 /modules/DBHelper
+.DS_Store
