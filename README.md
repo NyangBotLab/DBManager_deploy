@@ -213,6 +213,10 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+## 2.1.2
+1. return true 가 두개 연속으로 있는 현상 수정 :<
+2. channel.name이 MultiChat에서 undefined 주는 현상 수정
+
 
 ## 2.1.1
 1. 컴파일 할 때 undefined 검사 추가
