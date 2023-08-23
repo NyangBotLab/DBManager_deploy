@@ -1,5 +1,9 @@
-카카오톡 디비 봇 모듈
+카카오톡 디비 봇 모듈 v2
 ======================
+
+# 주의 실험적 기능이 많으니 갑자기 사라질 수도 있습니다.
+
+
 
 #### 컴퓨터에서 작업하는걸 추천합니다.
 
@@ -11,7 +15,7 @@
 
 > ### 메소드는 여기서 확인할 수 있어요
 > 
->https://nyangbotlab.github.io/dbdoc/v1/
+>https://nyangbotlab.github.io/dbdoc/v2/
 
 __AGPL 라이선스 사용__
 
@@ -179,6 +183,18 @@ DBListener.on("member_type_change", (chat, channel) => {
 })
 ```
 
+
+***
+## open_profile_change : (beforeUser : ChangeUserType, afterUser : ChangeUserType, channel : Channel) => void
+
+누군가 오픈 프로필을 변경하면 반응합니다
+
+```javascript
+DBListener.on("open_profile_change", (beforeUser, afterUser, channel) => {
+   
+})
+```
+
 ****
 
 # 고오오오급 
@@ -197,6 +213,11 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+
+## 2.1.0
+1. 구조 변경(리펙토링 편하게) 및 DB static에 자주 쓰이는 함수 추가
+2. open_profile_change 추가
+3. getInstance 인자 변경
 
 ## 1.6.1
 1. wakeLock 버그 수정

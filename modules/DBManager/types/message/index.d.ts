@@ -1,1 +1,1 @@
-export * from "./FeedType";
+export * from './feed_type';

@@ -1,1 +1,1 @@
-export * from "./UserType";
+export * from './user_type';

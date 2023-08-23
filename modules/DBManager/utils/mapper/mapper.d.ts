@@ -1,9 +1,8 @@
-import type { ChannelCommon, ChatType, UserInfoType } from "../../types";
-import { Chat, User } from "../../Manager";
-import { Channel } from "../../Manager/ChannelManager";
+import type { ChannelCommon, ChatType, UserInfoType } from '../../types';
+import { Chat, Channel, User } from '../../classes';
 export declare namespace Mapper {
     function setUserKey(key: string): void;
-    function cursorToChatObject(cursor: android.database.Cursor, prefix?: string): ChatType<any>;
+    function cursorToChatObject(cursor: android.database.Cursor, prefix?: string): ChatType<number, any>;
     function chatMapper(obj: ChatType): Chat;
     function cursorToChat(cursor: android.database.Cursor, prefix?: string): Chat;
     function cursorToChannelObject(cursor: android.database.Cursor, userKey?: string, prefix?: string): Record<string, any>;
@@ -14,5 +13,5 @@ export declare namespace Mapper {
     function cursorToUserObject(cursor: android.database.Cursor, prefix?: string): UserInfoType;
     function userMapper(user: UserInfoType, userKey?: string): User;
     function cursorToUser(cursor: android.database.Cursor, userKey?: string, prefix?: string): User;
-    function openLinkMapper(cursor: android.database.Cursor, userKey?: string, prefix?: string): Record<string, any>;
+    function cursorToOpenLink(cursor: android.database.Cursor, prefix?: string): Record<string, any>;
 }

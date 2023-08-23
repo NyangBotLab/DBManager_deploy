@@ -1,8 +1,9 @@
 const DB = require('./modules/DBManager').DBManager;
 
-var DBListener = DB.getInstance("YOUR_PACKAGE_NAME", null, false /*get RootPermission*/);
-
-//아이디를 모르면 userKey부분을 null 또는 ""로 넘기면 오픈프로필을 통해서 userId를 구합니다
+/**
+ * 여기에 들어가는 인자는 https://nyangbotlab.github.io/dbdoc/v2/interfaces/types_manager.InstanceType.html 참고
+ */
+var DBListener = DB.getInstance({});
 
 /**
  * 메시지를 수신 할 때
@@ -113,4 +114,11 @@ DBListener.on("member_type_change", (chat, channel) => {
         channel.send(chat.newHost.nickName + "님이 새 방장이 되었어요");
     }
 });
+
+/**
+ * 오픈채팅방에서 프로필을 바꿀 때
+ */
+DBListener.on("open_profile_change", (beforeUser, afterUser, channel)=>{
+    channel.send("누군가 프로필이 바뀌었어요\n"+ beforeUser.name +"->"+afterUser.name)
+})
 DBListener.start();

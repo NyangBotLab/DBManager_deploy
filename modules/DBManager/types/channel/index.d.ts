@@ -1,2 +1,2 @@
-export * from "./ChannelType";
-export * from "./OpenLinkType";
+export * from './channel_type';
+export * from './open_link_type';
