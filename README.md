@@ -214,6 +214,10 @@ npm run compile katalkbot DB
 
 # 패치노트
 
+## 2.1.1
+1. 컴파일 할 때 undefined 검사 추가
+
+
 ## 2.1.0
 1. 구조 변경(리펙토링 편하게) 및 DB static에 자주 쓰이는 함수 추가
 2. open_profile_change 추가
