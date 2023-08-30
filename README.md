@@ -213,6 +213,11 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+## 2.2.0
+1. 닉변 감지 알고리즘 변경
+2. 1:1오픈채팅에서 이름을 잘못 가져오는 현상 수정
+3. 타입 체크 강화
+
 ## 2.1.2
 1. return true 가 두개 연속으로 있는 현상 수정 :<
 2. channel.name이 MultiChat에서 undefined 주는 현상 수정

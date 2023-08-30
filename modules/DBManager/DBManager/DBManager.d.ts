@@ -13,7 +13,9 @@ export declare class DBManager extends DBManager_base {
     private readonly _packageName;
     private readonly _userKey;
     private readonly _db;
+    private readonly _db2;
     private _dbObs;
+    private _userObs;
     private _lastID?;
     private _threadPool;
     private _reactByMine;
@@ -23,6 +25,7 @@ export declare class DBManager extends DBManager_base {
     private _onEvent;
     private _onUserEvent;
     start(): boolean;
+    private _runDB;
     stop(): boolean;
     close(): void;
     setWakeLock(setWakeLock: boolean): void;
