@@ -11,6 +11,14 @@ export declare class FeedChat extends Chat {
      */
     get message(): string | FeedAttach;
     isFeed(): this is FeedChat;
+    isInviteFeed(): this is InviteFeed;
+    isLeaveFeed(): this is LeaveFeed;
+    isOpenChatJoinFeed(): this is OpenChatJoinedFeed;
+    isOpenChatKickedFeed(): this is OpenChatKickedFeed;
+    isHandOverFeed(): this is HandOverFeed;
+    isDemoteFeed(): this is DemoteFeed;
+    isPromoteFeed(): this is PromoteFeed;
+    isDeleteFeed(): this is DeleteFeed;
 }
 export declare class InviteFeed extends FeedChat {
     constructor(props: ChatType);

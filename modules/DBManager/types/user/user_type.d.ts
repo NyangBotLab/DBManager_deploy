@@ -19,6 +19,7 @@ export interface BoardVField {
 export interface UserCommonType<V = any, B = any> {
     id: string;
     _id: string;
+    nick_name: string;
     type: number;
     name: string;
     profile_image_url: string;

@@ -35,7 +35,7 @@ export declare class Channel {
     get raw(): ChannelCommon;
     toJSON(): {
         channel: ChannelCommon;
-        openLinkInfo: null | OpenLinkType;
+        openLink: null | OpenLinkType;
     };
     /**
      * 방의 마지막 대화를 가져옵니다.

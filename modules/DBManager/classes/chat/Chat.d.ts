@@ -46,10 +46,14 @@ export declare class Chat {
      * 전체 내용을 가져옵니다
      */
     get raw(): ChatType<number, any>;
+    /**
+     * 외치기 기능을 사용했는지 확인합니다.
+     */
+    hasShout(): boolean;
     toJSON(): {
         chat: ChatType<number, any>;
         user: User;
-        channelInfo: Channel | null;
+        channel: Channel | null;
     };
     /**
      * 보낸 시각을 가져옵니다

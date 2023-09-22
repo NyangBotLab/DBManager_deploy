@@ -213,6 +213,12 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+## 2.3.0
+1. Chat, Channel 객체에서 toJSON 키 값 수정 
+2. FeedChat에 타입 가드용 메소드 추가(isInviteFeed isLeaveFeed 등등)
+3. User 객체에 customName 속성 추가 (친구 이름 직접 설정한 내용)
+4. Channel 객체에 customName 속성 추가(방 이름 직접 지정한 내용)
+
 ## 2.2.0
 1. 닉변 감지 알고리즘 변경
 2. 1:1오픈채팅에서 이름을 잘못 가져오는 현상 수정

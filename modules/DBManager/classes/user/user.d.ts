@@ -14,6 +14,10 @@ export declare class User {
      */
     get name(): string;
     /**
+     * 자기가 직접 설정한 이름을 가져옵니다.(실제 프로필 전용)
+     */
+    get customName(): string | null;
+    /**
      * 유저 멤버타입(오픈톡)
      */
     get memberType(): number;

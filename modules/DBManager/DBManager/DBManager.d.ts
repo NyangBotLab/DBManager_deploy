@@ -20,7 +20,7 @@ export declare class DBManager extends DBManager_base {
     private _threadPool;
     private _reactByMine;
     private constructor();
-    static getInstance(init: InstanceType): DBManager;
+    static getInstance(init?: InstanceType): DBManager;
     addChannel(sbn: any): void;
     private _onEvent;
     private _onUserEvent;

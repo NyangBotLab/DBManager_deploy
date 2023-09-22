@@ -14,6 +14,8 @@ export interface ChatType<N = number, T = any> {
     id: NUMSTRING;
     _id: NUMSTRING;
     deleted_at: string;
+    supplement?: unknown | null;
+    referer: number;
     type: N;
     chat_id: string;
     user_id: string;

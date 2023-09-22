@@ -20,20 +20,20 @@ export declare class OpenChannel extends Channel {
     get openLink(): OpenLinkType;
     toJSON(): {
         channel: ChannelCommon;
-        openLinkInfo: OpenLinkType;
+        openLink: OpenLinkType;
     };
 }
 export declare class OpenMultiChannel extends OpenChannel {
     get raw(): ChannelType<"OM", OpenChannelV>;
     toJSON(): {
         channel: ChannelCommon;
-        openLinkInfo: OpenLinkType;
+        openLink: OpenLinkType;
     };
 }
 export declare class OpenDirectChannel extends OpenChannel {
     get raw(): ChannelType<"OD", OpenChannelV>;
     toJSON(): {
         channel: ChannelCommon;
-        openLinkInfo: OpenLinkType;
+        openLink: OpenLinkType;
     };
 }
