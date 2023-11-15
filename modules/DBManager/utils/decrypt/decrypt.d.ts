@@ -1,3 +1,2 @@
-declare const Long: typeof java.lang.Long;
-export declare const decrypt: (userId: number | string | typeof Long, enc: number, text: string) => string;
-export {};
+export declare function decryptInit(packageName: string): void;
+export declare function decrypt(userId: number | string, enc: number, text: string): string;

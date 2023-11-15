@@ -1,6 +1,6 @@
 import type { UserCommonType, UserInfoType } from '../../types';
 import type { OpenUser } from './open_user';
-import type { UserSelf } from "./user_self";
+import type { UserSelf } from './user_self';
 export declare class User {
     protected _raw: UserInfoType;
     constructor(obj: UserCommonType);

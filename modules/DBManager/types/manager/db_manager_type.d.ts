@@ -1,4 +1,4 @@
-import { Channel, Chat, DeleteFeed, InviteFeed, KickedFeed, LeaveFeed, MemberTypeChangedFeed, OpenChatJoinedFeed } from "../../classes";
+import { Channel, Chat, DeleteFeed, InviteFeed, KickedFeed, LeaveFeed, MemberTypeChangedFeed, OpenChatJoinedFeed } from '../../classes';
 export interface ChangeUserType {
     name: string;
     user_id: string;

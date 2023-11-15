@@ -1,8 +1,9 @@
-import type { ChannelCommon, OpenLinkType } from '../../types';
+import type { ChannelCommon, ChannelCountInfo, OpenLinkType } from '../../types';
 import type { User } from '../user';
 import type { Chat } from '../chat';
-import type { OpenChannel, OpenDirectChannel, OpenMultiChannel } from "./open-channel";
-import type { DirectChannel, MultiChannel } from "./normal-channel";
+import type { OpenChannel, OpenDirectChannel, OpenMultiChannel } from './open-channel';
+import type { DirectChannel, MultiChannel } from './normal-channel';
+import type { CountOption } from '../../types';
 export declare class Channel {
     protected _raw: ChannelCommon;
     protected _id: string;
@@ -68,6 +69,10 @@ export declare class Channel {
      * @return User|null
      */
     get host(): User | null;
+    /**
+     * 유저별 채팅 수를 구합니다.
+     */
+    getChatCountGroupByUser(options: CountOption): ChannelCountInfo[];
     /**
      * 대화 내역을 가져옵니다.
      * @return Chat[]

@@ -1,5 +1,5 @@
-import type { ChannelType, ChannelV } from "../../types";
-import { Channel } from "./channel";
+import type { ChannelType, ChannelV } from '../../types';
+import { Channel } from './channel';
 export declare class DirectChannel extends Channel {
     get raw(): ChannelType<"DirectChat", ChannelV>;
 }

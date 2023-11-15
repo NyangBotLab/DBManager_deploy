@@ -1,6 +1,6 @@
-import type { ChannelCommon, ChannelType, OpenChannelV, OpenLinkType } from "../../types";
-import type { User } from "../user";
-import { Channel } from "./channel";
+import type { ChannelCommon, ChannelType, OpenChannelV, OpenLinkType } from '../../types';
+import type { User } from '../user';
+import { Channel } from './channel';
 export declare class OpenChannel extends Channel {
     protected _openLink: OpenLinkType;
     protected _host: User;

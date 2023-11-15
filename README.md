@@ -213,6 +213,15 @@ npm run compile katalkbot DB
 ```
 
 # 패치노트
+
+
+## 2.4.0
+1. 새 암호화 방식 대응
+2. channel.getChatCountGroupByUser 메소드 추가
+3. DB 인스턴스에 getChannelById추가
+4. open_profile_change에서 잘못된 타입을 주는 현상 수정
+
+
 ## 2.3.0
 1. Chat, Channel 객체에서 toJSON 키 값 수정 
 2. FeedChat에 타입 가드용 메소드 추가(isInviteFeed isLeaveFeed 등등)

@@ -1,6 +1,7 @@
 import type { User } from '../../../classes';
 import type { Chat } from '../../../classes';
-import type { Channel } from "../../../classes";
+import type { ChannelCountInfo } from '../../../types';
+import type { Channel } from '../../../classes';
 export type UserChangeLog = {
     user_id: string;
     chat_id: string;
@@ -23,7 +24,6 @@ export declare namespace DBUtil {
     function getLastChatsByChannel(count: number | undefined, channelID: string): Chat[];
     function getNextChat(chat: Chat, count?: number): Chat | null;
     function getChatStack(from?: string | undefined, to?: string | undefined): Chat[];
-    function getUserChangeLog(): UserChangeLog[];
     function getLastID(): string | undefined;
     function getOneUserByID(id: string): User | null;
     function getMultipleUsersByIDs(ids: string[], makeGroup?: boolean): {};
@@ -31,4 +31,5 @@ export declare namespace DBUtil {
     function getMembersByRoomID(id: string): User[] | null;
     function rawQuery(query: string, values: any[]): null | Record<string, any>[];
     function cursorToObject(cursor: android.database.Cursor): Record<string, any>[];
+    function getCountGroupByUser(chat_id: string, startTime: number, endTime: number, includesFeed: boolean): ChannelCountInfo[];
 }
