@@ -1,6 +1,6 @@
 {
   "name": "db_manager_deploy",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "디비봇이요 디비봇",
   "main": "DB.js",
   "scripts": {
