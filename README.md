@@ -17,7 +17,9 @@
 > 
 >https://nyangbotlab.github.io/dbdoc/v2/
 
-__AGPL 라이선스 사용__
+__라이센스 요약__
+1. 상업적 이용 금지
+2. 이 라이센스 그대로 배포
 
 # 초기설정 
 
